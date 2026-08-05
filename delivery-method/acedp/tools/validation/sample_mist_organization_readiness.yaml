@@ -1,0 +1,17 @@
+# Sample Mist_Organization_Readiness instance -- placeholder, non-customer data.
+# Conforms to Mist_Organization_Readiness.schema.yaml (SPEC-006, v1.0). For validator testing only.
+metadata:
+  readiness_id: sample-readiness_id
+  readiness_name: sample-readiness_name
+  schema_version: '1.0'
+  document_reference: SPEC-006
+  status: Draft
+  version: sample-version
+  created_date: '2026-01-01'
+  last_updated: '2026-01-01'
+readiness_scope:
+  objective: sample-objective
+readiness_categories:
+- category_id: sample-category_id
+required_mist_constructs:
+- construct_id: sample-construct_id

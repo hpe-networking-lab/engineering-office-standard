@@ -1,0 +1,24 @@
+# Sample Customer_Discovery instance -- placeholder, non-customer data.
+# Conforms to Customer_Discovery.schema.yaml (SPEC-002, v1.0). For validator testing only.
+metadata:
+  discovery_id: sample-discovery_id
+  discovery_name: sample-discovery_name
+  schema_version: '1.0'
+  document_reference: SPEC-002
+  status: Draft
+  version: sample-version
+  created_date: '2026-01-01'
+  last_updated: '2026-01-01'
+references:
+- reference_id: sample-reference_id
+  ref_document: sample-ref_document
+  ref_id: sample-ref_id
+customer:
+  customer_id: sample-customer_id
+  name: sample-name
+findings:
+- finding_id: sample-finding_id
+  description: sample-description
+open_questions:
+- question_id: sample-question_id
+  description: sample-description

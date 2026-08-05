@@ -1,0 +1,30 @@
+# Sample Engineering_Review instance -- placeholder, non-customer data.
+# Conforms to Engineering_Review.schema.yaml (SPEC-003, v1.0). For validator testing only.
+metadata:
+  review_id: sample-review_id
+  review_name: sample-review_name
+  schema_version: '1.0'
+  document_reference: SPEC-003
+  status: Draft
+  version: sample-version
+  created_date: '2026-01-01'
+  last_updated: '2026-01-01'
+review_scope:
+  description: sample-description
+artifacts_reviewed:
+- artifact_id: sample-artifact_id
+  artifact_reference:
+    ref_document: sample-ref_document
+    ref_id: sample-ref_id
+review_criteria:
+- criterion_id: sample-criterion_id
+  description: sample-description
+findings:
+- finding_id: sample-finding_id
+  description: sample-description
+  severity: blocking
+approvals:
+- approval_id: sample-approval_id
+  artifact: sample-artifact
+  decision: approved
+  authority: product_owner

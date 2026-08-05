@@ -1,0 +1,24 @@
+# Sample POC_Deliverable instance -- placeholder, non-customer data.
+# Conforms to POC_Deliverable.schema.yaml (SPEC-004, v1.0). For validator testing only.
+metadata:
+  poc_id: sample-poc_id
+  poc_name: sample-poc_name
+  schema_version: '1.0'
+  document_reference: SPEC-004
+  status: Draft
+  version: sample-version
+  created_date: '2026-01-01'
+  last_updated: '2026-01-01'
+poc_scope:
+  objective: sample-objective
+  in_scope:
+  - sample
+  out_of_scope:
+  - sample
+success_criteria:
+- criterion_id: sample-criterion_id
+  description: sample-description
+  measure: sample-measure
+test_plan:
+- test_id: sample-test_id
+  description: sample-description

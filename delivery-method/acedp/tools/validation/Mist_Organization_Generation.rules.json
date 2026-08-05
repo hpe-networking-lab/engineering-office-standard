@@ -1,0 +1,949 @@
+{
+  "artifact": "acedp-intermediate-ruleset",
+  "format_version": "0.1",
+  "schema_id": "SPEC-007",
+  "schema_version": "1.0",
+  "source": "acedp/schemas/Mist_Organization_Generation.schema.yaml",
+  "rule_count": 186,
+  "rules": [
+    {
+      "path": "metadata",
+      "rule": "required"
+    },
+    {
+      "path": "metadata.generation_id",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "metadata.generation_id",
+      "rule": "required"
+    },
+    {
+      "path": "metadata.generation_name",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "metadata.generation_name",
+      "rule": "required"
+    },
+    {
+      "path": "metadata.schema_version",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "metadata.schema_version",
+      "rule": "required"
+    },
+    {
+      "path": "metadata.document_reference",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "metadata.document_reference",
+      "rule": "required"
+    },
+    {
+      "path": "metadata.status",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "metadata.status",
+      "rule": "required"
+    },
+    {
+      "path": "metadata.status",
+      "rule": "allowed",
+      "allowed": [
+        "Draft",
+        "In Review",
+        "Approved",
+        "Superseded"
+      ]
+    },
+    {
+      "path": "metadata.version",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "metadata.version",
+      "rule": "required"
+    },
+    {
+      "path": "metadata.created_date",
+      "rule": "type",
+      "expected_type": "date"
+    },
+    {
+      "path": "metadata.created_date",
+      "rule": "required"
+    },
+    {
+      "path": "metadata.last_updated",
+      "rule": "type",
+      "expected_type": "date"
+    },
+    {
+      "path": "metadata.last_updated",
+      "rule": "required"
+    },
+    {
+      "path": "metadata.author",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "metadata.owner",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "references",
+      "rule": "type",
+      "expected_type": "list"
+    },
+    {
+      "path": "references[].reference_id",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "references[].reference_id",
+      "rule": "required"
+    },
+    {
+      "path": "references[].ref_document",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "references[].ref_document",
+      "rule": "required"
+    },
+    {
+      "path": "references[].ref_id",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "references[].ref_id",
+      "rule": "required"
+    },
+    {
+      "path": "references[].ref_version",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "references[].relationship",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "generation_scope",
+      "rule": "required"
+    },
+    {
+      "path": "generation_scope.objective",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "generation_scope.objective",
+      "rule": "required"
+    },
+    {
+      "path": "generation_scope.description",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "generation_scope.in_scope",
+      "rule": "type",
+      "expected_type": "list[string]"
+    },
+    {
+      "path": "generation_scope.in_scope",
+      "rule": "required"
+    },
+    {
+      "path": "generation_scope.out_of_scope",
+      "rule": "type",
+      "expected_type": "list[string]"
+    },
+    {
+      "path": "generation_scope.out_of_scope",
+      "rule": "required"
+    },
+    {
+      "path": "organization_intent",
+      "rule": "required"
+    },
+    {
+      "path": "organization_intent.summary",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "organization_intent.summary",
+      "rule": "required"
+    },
+    {
+      "path": "organization_intent.structure_intent",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "organization_intent.design_reference",
+      "rule": "type",
+      "expected_type": "reference"
+    },
+    {
+      "path": "organization_intent.design_reference",
+      "rule": "reference_shape"
+    },
+    {
+      "path": "organization_intent.design_reference.ref_document",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "organization_intent.design_reference.ref_document",
+      "rule": "required"
+    },
+    {
+      "path": "organization_intent.design_reference.ref_path",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "organization_intent.notes",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "site_intent",
+      "rule": "type",
+      "expected_type": "list"
+    },
+    {
+      "path": "site_intent[].site_id",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "site_intent[].site_id",
+      "rule": "required"
+    },
+    {
+      "path": "site_intent[].name_intent",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "site_intent[].site_group",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "site_intent[].parent_site_group",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "site_intent[].purpose",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "site_intent[].design_reference",
+      "rule": "type",
+      "expected_type": "reference"
+    },
+    {
+      "path": "site_intent[].design_reference",
+      "rule": "reference_shape"
+    },
+    {
+      "path": "site_intent[].design_reference.ref_document",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "site_intent[].design_reference.ref_document",
+      "rule": "required"
+    },
+    {
+      "path": "site_intent[].design_reference.ref_path",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "template_intent",
+      "rule": "type",
+      "expected_type": "list"
+    },
+    {
+      "path": "template_intent[].template_id",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "template_intent[].template_id",
+      "rule": "required"
+    },
+    {
+      "path": "template_intent[].template_type",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "template_intent[].template_type",
+      "rule": "allowed",
+      "allowed": [
+        "network",
+        "switch",
+        "wlan",
+        "rf"
+      ]
+    },
+    {
+      "path": "template_intent[].scope_level",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "template_intent[].scope_level",
+      "rule": "allowed",
+      "allowed": [
+        "org",
+        "site_group",
+        "site"
+      ]
+    },
+    {
+      "path": "template_intent[].inherits_from",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "template_intent[].purpose",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "template_intent[].design_reference",
+      "rule": "type",
+      "expected_type": "reference"
+    },
+    {
+      "path": "template_intent[].design_reference",
+      "rule": "reference_shape"
+    },
+    {
+      "path": "template_intent[].design_reference.ref_document",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "template_intent[].design_reference.ref_document",
+      "rule": "required"
+    },
+    {
+      "path": "template_intent[].design_reference.ref_path",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "template_intent[].notes",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "wlan_intent",
+      "rule": "type",
+      "expected_type": "list"
+    },
+    {
+      "path": "wlan_intent[].wlan_id",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "wlan_intent[].wlan_id",
+      "rule": "required"
+    },
+    {
+      "path": "wlan_intent[].ssid_name_intent",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "wlan_intent[].purpose",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "wlan_intent[].security_intent",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "wlan_intent[].security_intent",
+      "rule": "allowed",
+      "allowed": [
+        "open",
+        "psk",
+        "enterprise"
+      ]
+    },
+    {
+      "path": "wlan_intent[].template_ref",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "wlan_intent[].template_ref",
+      "rule": "reference_integrity",
+      "target_collection": "template_intent",
+      "target_id_field": "template_id"
+    },
+    {
+      "path": "wlan_intent[].design_reference",
+      "rule": "type",
+      "expected_type": "reference"
+    },
+    {
+      "path": "wlan_intent[].design_reference",
+      "rule": "reference_shape"
+    },
+    {
+      "path": "wlan_intent[].design_reference.ref_document",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "wlan_intent[].design_reference.ref_document",
+      "rule": "required"
+    },
+    {
+      "path": "wlan_intent[].design_reference.ref_path",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "switching_intent",
+      "rule": "type",
+      "expected_type": "list"
+    },
+    {
+      "path": "switching_intent[].switching_id",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "switching_intent[].switching_id",
+      "rule": "required"
+    },
+    {
+      "path": "switching_intent[].role",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "switching_intent[].role",
+      "rule": "allowed",
+      "allowed": [
+        "access",
+        "distribution",
+        "core",
+        "collapsed_core"
+      ]
+    },
+    {
+      "path": "switching_intent[].purpose",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "switching_intent[].template_ref",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "switching_intent[].template_ref",
+      "rule": "reference_integrity",
+      "target_collection": "template_intent",
+      "target_id_field": "template_id"
+    },
+    {
+      "path": "switching_intent[].design_reference",
+      "rule": "type",
+      "expected_type": "reference"
+    },
+    {
+      "path": "switching_intent[].design_reference",
+      "rule": "reference_shape"
+    },
+    {
+      "path": "switching_intent[].design_reference.ref_document",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "switching_intent[].design_reference.ref_document",
+      "rule": "required"
+    },
+    {
+      "path": "switching_intent[].design_reference.ref_path",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "policy_intent",
+      "rule": "type",
+      "expected_type": "list"
+    },
+    {
+      "path": "policy_intent[].policy_id",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "policy_intent[].policy_id",
+      "rule": "required"
+    },
+    {
+      "path": "policy_intent[].name_intent",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "policy_intent[].purpose",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "policy_intent[].action_intent",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "policy_intent[].action_intent",
+      "rule": "allowed",
+      "allowed": [
+        "permit",
+        "deny",
+        "inspect",
+        "segment"
+      ]
+    },
+    {
+      "path": "policy_intent[].scope_intent",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "policy_intent[].design_reference",
+      "rule": "type",
+      "expected_type": "reference"
+    },
+    {
+      "path": "policy_intent[].design_reference",
+      "rule": "reference_shape"
+    },
+    {
+      "path": "policy_intent[].design_reference.ref_document",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "policy_intent[].design_reference.ref_document",
+      "rule": "required"
+    },
+    {
+      "path": "policy_intent[].design_reference.ref_path",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "inventory_intent",
+      "rule": "type",
+      "expected_type": "list"
+    },
+    {
+      "path": "inventory_intent[].inventory_id",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "inventory_intent[].inventory_id",
+      "rule": "required"
+    },
+    {
+      "path": "inventory_intent[].device_role",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "inventory_intent[].quantity_intent",
+      "rule": "type",
+      "expected_type": "integer"
+    },
+    {
+      "path": "inventory_intent[].site_ref",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "inventory_intent[].site_ref",
+      "rule": "reference_integrity",
+      "target_collection": "site_intent",
+      "target_id_field": "site_id"
+    },
+    {
+      "path": "inventory_intent[].design_reference",
+      "rule": "type",
+      "expected_type": "reference"
+    },
+    {
+      "path": "inventory_intent[].design_reference",
+      "rule": "reference_shape"
+    },
+    {
+      "path": "inventory_intent[].design_reference.ref_document",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "inventory_intent[].design_reference.ref_document",
+      "rule": "required"
+    },
+    {
+      "path": "inventory_intent[].design_reference.ref_path",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "pre_implementation_review.status",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "pre_implementation_review.status",
+      "rule": "allowed",
+      "allowed": [
+        "pending",
+        "in_review",
+        "approved",
+        "rejected"
+      ]
+    },
+    {
+      "path": "pre_implementation_review.prerequisites_confirmed",
+      "rule": "type",
+      "expected_type": "boolean"
+    },
+    {
+      "path": "pre_implementation_review.blocking_items",
+      "rule": "type",
+      "expected_type": "list[string]"
+    },
+    {
+      "path": "pre_implementation_review.review_reference",
+      "rule": "type",
+      "expected_type": "reference"
+    },
+    {
+      "path": "pre_implementation_review.review_reference",
+      "rule": "reference_shape"
+    },
+    {
+      "path": "pre_implementation_review.review_reference.ref_document",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "pre_implementation_review.review_reference.ref_document",
+      "rule": "required"
+    },
+    {
+      "path": "pre_implementation_review.review_reference.ref_id",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "pre_implementation_review.review_reference.ref_id",
+      "rule": "required"
+    },
+    {
+      "path": "pre_implementation_review.notes",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "risks",
+      "rule": "type",
+      "expected_type": "list"
+    },
+    {
+      "path": "risks[].risk_id",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "risks[].risk_id",
+      "rule": "required"
+    },
+    {
+      "path": "risks[].description",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "risks[].description",
+      "rule": "required"
+    },
+    {
+      "path": "risks[].likelihood",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "risks[].likelihood",
+      "rule": "allowed",
+      "allowed": [
+        "high",
+        "medium",
+        "low"
+      ]
+    },
+    {
+      "path": "risks[].impact",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "risks[].impact",
+      "rule": "allowed",
+      "allowed": [
+        "high",
+        "medium",
+        "low"
+      ]
+    },
+    {
+      "path": "risks[].rating",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "risks[].rating",
+      "rule": "allowed",
+      "allowed": [
+        "high",
+        "medium",
+        "low"
+      ]
+    },
+    {
+      "path": "risks[].mitigation",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "assumptions",
+      "rule": "type",
+      "expected_type": "list"
+    },
+    {
+      "path": "assumptions[].assumption_id",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "assumptions[].assumption_id",
+      "rule": "required"
+    },
+    {
+      "path": "assumptions[].description",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "assumptions[].description",
+      "rule": "required"
+    },
+    {
+      "path": "assumptions[].status",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "assumptions[].status",
+      "rule": "allowed",
+      "allowed": [
+        "open",
+        "confirmed",
+        "invalidated"
+      ]
+    },
+    {
+      "path": "assumptions[].impact",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "open_questions",
+      "rule": "type",
+      "expected_type": "list"
+    },
+    {
+      "path": "open_questions[].question_id",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "open_questions[].question_id",
+      "rule": "required"
+    },
+    {
+      "path": "open_questions[].description",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "open_questions[].description",
+      "rule": "required"
+    },
+    {
+      "path": "open_questions[].blocking",
+      "rule": "type",
+      "expected_type": "boolean"
+    },
+    {
+      "path": "open_questions[].owner_role",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "open_questions[].status",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "open_questions[].status",
+      "rule": "allowed",
+      "allowed": [
+        "open",
+        "answered"
+      ]
+    },
+    {
+      "path": "approvals",
+      "rule": "type",
+      "expected_type": "list"
+    },
+    {
+      "path": "approvals[].approval_id",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "approvals[].approval_id",
+      "rule": "required"
+    },
+    {
+      "path": "approvals[].artifact",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "approvals[].artifact",
+      "rule": "required"
+    },
+    {
+      "path": "approvals[].decision",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "approvals[].decision",
+      "rule": "required"
+    },
+    {
+      "path": "approvals[].decision",
+      "rule": "allowed",
+      "allowed": [
+        "approved",
+        "rejected",
+        "pending"
+      ]
+    },
+    {
+      "path": "approvals[].authority",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "approvals[].authority",
+      "rule": "required"
+    },
+    {
+      "path": "approvals[].authority",
+      "rule": "allowed",
+      "allowed": [
+        "product_owner",
+        "lead_architect",
+        "implementation_engineer"
+      ]
+    },
+    {
+      "path": "approvals[].review_reference",
+      "rule": "type",
+      "expected_type": "reference"
+    },
+    {
+      "path": "approvals[].review_reference",
+      "rule": "reference_shape"
+    },
+    {
+      "path": "approvals[].review_reference.ref_document",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "approvals[].review_reference.ref_document",
+      "rule": "required"
+    },
+    {
+      "path": "approvals[].review_reference.ref_id",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "approvals[].review_reference.ref_id",
+      "rule": "required"
+    },
+    {
+      "path": "approvals[].date",
+      "rule": "type",
+      "expected_type": "date"
+    },
+    {
+      "path": "approvals[].notes",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "metadata.schema_version",
+      "rule": "schema_version",
+      "note": "instance schema_version must match an available schema version"
+    }
+  ]
+}

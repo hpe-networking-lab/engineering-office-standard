@@ -1,0 +1,19 @@
+# Sample Design_Package instance -- placeholder, non-customer data.
+# Conforms to Design_Package.schema.yaml (SPEC-005, v1.0). For validator testing only.
+metadata:
+  design_id: sample-design_id
+  design_name: sample-design_name
+  schema_version: '1.0'
+  document_reference: SPEC-005
+  status: Draft
+  version: sample-version
+  created_date: '2026-01-01'
+  last_updated: '2026-01-01'
+design_scope:
+  objective: sample-objective
+  in_scope:
+  - sample
+  out_of_scope:
+  - sample
+high_level_design:
+  summary: sample-summary

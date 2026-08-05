@@ -1,0 +1,352 @@
+# =============================================================================
+# Customer Discovery Schema
+# -----------------------------------------------------------------------------
+# Schema Version:      1.0   (convenience copy; metadata.schema_version is authoritative)
+# Status:              Approved
+# Approved By:         lead_architect (technical approval)
+# Approval Date:       2026-06-30
+# Document Reference:  SPEC-002 Customer Discovery
+# Source of Truth:     acedp/docs/specifications/SPEC-002_Customer_Discovery.md
+# Related:             SPEC-001 Project Profile (enriched by this record),
+#                      SPEC-003 Engineering Review (completeness gate)
+#
+# Purpose:
+#   Documentation-first description of the canonical Customer Discovery record.
+#   NOT executable; no validation logic; no example/customer data.
+#
+# Common envelope (shared by all ACEDP schemas):
+#   metadata  ->  references  ->  <domain sections>  ->  approvals
+#
+# Conventions (shared with Project_Profile.schema.yaml):
+#   - Keys/field names use snake_case; identifiers are "<section>_id".
+#   - Each field is documented as: { type, required, description }.
+#   - "type: list" sections describe a repeating element under "items:".
+#   - "type: reference" fields describe a structured external link under "fields:".
+#   - Enum values are listed under "allowed:".
+#   - metadata.schema_version is the AUTHORITATIVE schema version.
+#   - Internal links use a bare local "<section>_id" value.
+#   - External links use the standardized "references" section or a structured
+#     "type: reference" field — never free-text.
+#   - Provisional choices are marked inline with "# OPEN:".
+# =============================================================================
+
+# ----------------------------------------------------------------------------
+# metadata — about the Customer Discovery record itself
+# ----------------------------------------------------------------------------
+metadata:
+  discovery_id:
+    type: string
+    required: true
+    description: Stable, unique identifier for this discovery record.
+  discovery_name:
+    type: string
+    required: true
+    description: Human-readable name of the discovery record.
+  schema_version:
+    type: string
+    required: true
+    description: AUTHORITATIVE version of this schema the record conforms to (e.g. "1.0").
+  document_reference:
+    type: string
+    required: true
+    description: Source specification. Fixed value "SPEC-002".
+  status:
+    type: string
+    required: true
+    description: Lifecycle status of the discovery record.
+    allowed: [Draft, In Review, Approved, Superseded]   # per STD-001
+  version:
+    type: string
+    required: true
+    description: Record version as MAJOR.MINOR (per STD-001 versioning).
+  created_date:
+    type: date
+    required: true
+    description: Date the record was created (ISO 8601, YYYY-MM-DD).
+  last_updated:
+    type: date
+    required: true
+    description: Date the record was last changed (ISO 8601).
+  author:
+    type: string
+    required: false
+    description: Role or identity that authored the record.
+  owner:
+    type: string
+    required: false
+    description: Role accountable for the record's content.
+
+# ----------------------------------------------------------------------------
+# references — standardized structured links to external artifacts
+# (Replaces the former free-standing "project_reference" section.)
+# ----------------------------------------------------------------------------
+references:
+  type: list
+  required: true
+  description: Structured links to external artifacts or instances.
+  items:
+    reference_id:
+      type: string
+      required: true
+      description: Local identifier for this reference entry.
+    ref_document:
+      type: string
+      required: true
+      description: Source specification or artifact type (e.g. "SPEC-001").
+    ref_id:
+      type: string
+      required: true
+      description: Identifier of the referenced instance (e.g. a profile_id).
+    ref_version:
+      type: string
+      required: false
+      description: Version of the referenced instance, if pinned.
+    relationship:
+      type: string
+      required: false
+      description: Nature of the link (e.g. "enriches" the Project Profile).
+
+# ----------------------------------------------------------------------------
+# customer — customer context under discovery (field definitions only)
+# ----------------------------------------------------------------------------
+customer:
+  customer_id:
+    type: string
+    required: true
+    description: Stable, unique identifier for the customer.
+  name:
+    type: string
+    required: true
+    description: Customer name.
+  context_summary:
+    type: string
+    required: false
+    description: Non-sensitive summary of the customer's situation/environment.
+
+# ----------------------------------------------------------------------------
+# discovery_sessions — records of discovery interactions
+# ----------------------------------------------------------------------------
+discovery_sessions:
+  type: list
+  required: false
+  description: Sessions in which discovery information was gathered.
+  items:
+    session_id:
+      type: string
+      required: true
+      description: Unique identifier for the session.
+    date:
+      type: date
+      required: false
+      description: Date the session took place (ISO 8601).
+    participant_roles:
+      type: list[string]
+      required: false
+      description: Roles present (role references, not PII).
+    topics:
+      type: list[string]
+      required: false
+      description: Topics covered during the session.
+    summary:
+      type: string
+      required: false
+      description: Brief summary of what was learned.
+
+# ----------------------------------------------------------------------------
+# information_sources — provenance of gathered information
+# ----------------------------------------------------------------------------
+information_sources:
+  type: list
+  required: false
+  description: Sources from which discovery information originated.
+  items:
+    source_id:
+      type: string
+      required: true
+      description: Unique identifier for the source.
+    type:
+      type: string
+      required: false
+      description: Category of source.
+      allowed: [stakeholder, document, system, observation]
+    reference:
+      type: string
+      required: false
+      description: Indirect reference to the source (not sensitive content).
+    reliability:
+      type: string
+      required: false
+      description: Assessed reliability of the source.
+      allowed: [high, medium, low]
+
+# ----------------------------------------------------------------------------
+# findings — confirmed facts that enrich the Project Profile
+# ----------------------------------------------------------------------------
+findings:
+  type: list
+  required: true
+  description: Confirmed facts gathered during discovery.
+  items:
+    finding_id:
+      type: string
+      required: true
+      description: Unique identifier for the finding.
+    category:
+      type: string
+      required: false
+      description: Subject area of the finding.
+    description:
+      type: string
+      required: true
+      description: The confirmed fact.
+    source_reference:
+      type: string
+      required: false
+      description: Internal link to an information_sources.source_id.
+    profile_reference:
+      type: reference
+      required: false
+      description: Structured link to the Project Profile field this finding enriches.
+      fields:
+        ref_document:
+          type: string
+          required: true
+          description: Fixed value "SPEC-001".
+        ref_path:
+          type: string
+          required: false
+          description: Dotted path to the target profile section/field (e.g. "scope.in_scope").
+    status:
+      type: string
+      required: false
+      description: Confirmation state of the finding.
+      allowed: [confirmed, provisional]
+
+# ----------------------------------------------------------------------------
+# open_questions — unresolved unknowns (must remain explicit, per SPEC-002)
+# ----------------------------------------------------------------------------
+open_questions:
+  type: list
+  required: true
+  description: Unknowns that are not yet resolved.
+  items:
+    question_id:
+      type: string
+      required: true
+      description: Unique identifier for the question.
+    description:
+      type: string
+      required: true
+      description: The unresolved question.
+    blocking:
+      type: boolean
+      required: false
+      description: Whether this question blocks Engineering Review.
+    owner_role:
+      type: string
+      required: false
+      description: Role responsible for resolving the question.
+    status:
+      type: string
+      required: false
+      description: Resolution state.
+      allowed: [open, answered]
+
+# ----------------------------------------------------------------------------
+# assumptions — assumptions pending confirmation (consistent with SPEC-001)
+# ----------------------------------------------------------------------------
+assumptions:
+  type: list
+  required: false
+  description: Working assumptions recorded during discovery.
+  items:
+    assumption_id:
+      type: string
+      required: true
+      description: Unique identifier for the assumption.
+    description:
+      type: string
+      required: true
+      description: The assumption being made.
+    status:
+      type: string
+      required: false
+      description: Confirmation state of the assumption.
+      allowed: [open, confirmed, invalidated]
+    impact:
+      type: string
+      required: false
+      description: Consequence if the assumption proves false.
+
+# ----------------------------------------------------------------------------
+# completeness — assessment against the discovery exit criteria (SPEC-002)
+# ----------------------------------------------------------------------------
+completeness:
+  required_areas_covered:
+    type: list[string]
+    required: false
+    description: Discovery areas confirmed as adequately covered.
+  outstanding_areas:
+    type: list[string]
+    required: false
+    description: Areas still requiring discovery.
+  exit_criteria_met:
+    type: boolean
+    required: false
+    description: Whether discovery meets the threshold to proceed.
+    # See SPEC-002 Open Questions (Accepted): minimum discovery completeness.
+  notes:
+    type: string
+    required: false
+    description: Narrative on completeness status.
+
+# ----------------------------------------------------------------------------
+# approvals — standard review/approval block: a list of approval records
+# (Replaces the former singular "review" mapping; ties to SPEC-003.)
+# ----------------------------------------------------------------------------
+approvals:
+  type: list
+  required: false
+  description: Approval decisions taken via Engineering Review (SPEC-003).
+  items:
+    approval_id:
+      type: string
+      required: true
+      description: Unique identifier for the approval record.
+    artifact:
+      type: string
+      required: true
+      description: What was reviewed/approved (e.g. "Customer Discovery").
+    decision:
+      type: string
+      required: true
+      description: Outcome of the review.
+      allowed: [approved, rejected, pending]
+    authority:
+      type: string
+      required: true
+      description: >-
+        Canonical actor field — the role that made the decision. See the
+        SPEC-003 approval-authority matrix for the authority per artifact class.
+      allowed: [product_owner, lead_architect, implementation_engineer]
+    review_reference:
+      type: reference
+      required: false
+      description: Structured link to the Engineering Review (SPEC-003) record.
+      fields:
+        ref_document:
+          type: string
+          required: true
+          description: Fixed value "SPEC-003".
+        ref_id:
+          type: string
+          required: true
+          description: Identifier of the review record.
+    date:
+      type: date
+      required: false
+      description: Date of the decision (ISO 8601).
+    notes:
+      type: string
+      required: false
+      description: Findings or conditions attached to the decision.

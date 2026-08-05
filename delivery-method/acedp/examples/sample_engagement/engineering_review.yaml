@@ -1,0 +1,39 @@
+# Sample Engineering Review (SPEC-003)
+# Fictional, non-customer sample data. For pipeline demonstration only.
+metadata:
+  review_id: ER-NW-1
+  review_name: sample-review_name
+  schema_version: '1.0'
+  document_reference: SPEC-003
+  status: Approved
+  version: '1.0'
+  created_date: '2026-03-01'
+  last_updated: '2026-03-15'
+  author: lead_architect
+  owner: product_owner
+review_scope:
+  description: Review of the Northwind Design Package.
+  review_type: gate
+artifacts_reviewed:
+- artifact_id: AR-1
+  artifact_reference:
+    ref_document: SPEC-005
+    ref_id: DP-NW-1
+  title: Design Package
+  outcome: approved
+review_criteria:
+- criterion_id: RC-1
+  description: Design conforms to standards.
+  result: met
+findings:
+- finding_id: F-1
+  description: Minor naming nit.
+  severity: minor
+  related_criterion: RC-1
+  related_artifact: AR-1
+  status: resolved
+approvals:
+- approval_id: A1
+  artifact: Design Package
+  decision: approved
+  authority: lead_architect

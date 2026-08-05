@@ -1,0 +1,706 @@
+{
+  "artifact": "acedp-intermediate-ruleset",
+  "format_version": "0.1",
+  "schema_id": "SPEC-003",
+  "schema_version": "1.0",
+  "source": "acedp/schemas/Engineering_Review.schema.yaml",
+  "rule_count": 135,
+  "rules": [
+    {
+      "path": "metadata",
+      "rule": "required"
+    },
+    {
+      "path": "metadata.review_id",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "metadata.review_id",
+      "rule": "required"
+    },
+    {
+      "path": "metadata.review_name",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "metadata.review_name",
+      "rule": "required"
+    },
+    {
+      "path": "metadata.schema_version",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "metadata.schema_version",
+      "rule": "required"
+    },
+    {
+      "path": "metadata.document_reference",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "metadata.document_reference",
+      "rule": "required"
+    },
+    {
+      "path": "metadata.status",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "metadata.status",
+      "rule": "required"
+    },
+    {
+      "path": "metadata.status",
+      "rule": "allowed",
+      "allowed": [
+        "Draft",
+        "In Review",
+        "Approved",
+        "Superseded"
+      ]
+    },
+    {
+      "path": "metadata.version",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "metadata.version",
+      "rule": "required"
+    },
+    {
+      "path": "metadata.created_date",
+      "rule": "type",
+      "expected_type": "date"
+    },
+    {
+      "path": "metadata.created_date",
+      "rule": "required"
+    },
+    {
+      "path": "metadata.last_updated",
+      "rule": "type",
+      "expected_type": "date"
+    },
+    {
+      "path": "metadata.last_updated",
+      "rule": "required"
+    },
+    {
+      "path": "metadata.author",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "metadata.owner",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "references",
+      "rule": "type",
+      "expected_type": "list"
+    },
+    {
+      "path": "references[].reference_id",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "references[].reference_id",
+      "rule": "required"
+    },
+    {
+      "path": "references[].ref_document",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "references[].ref_document",
+      "rule": "required"
+    },
+    {
+      "path": "references[].ref_id",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "references[].ref_id",
+      "rule": "required"
+    },
+    {
+      "path": "references[].ref_version",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "references[].relationship",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "review_scope",
+      "rule": "required"
+    },
+    {
+      "path": "review_scope.description",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "review_scope.description",
+      "rule": "required"
+    },
+    {
+      "path": "review_scope.review_type",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "review_scope.review_type",
+      "rule": "allowed",
+      "allowed": [
+        "initial",
+        "re_review",
+        "gate"
+      ]
+    },
+    {
+      "path": "review_scope.in_scope",
+      "rule": "type",
+      "expected_type": "list[string]"
+    },
+    {
+      "path": "review_scope.out_of_scope",
+      "rule": "type",
+      "expected_type": "list[string]"
+    },
+    {
+      "path": "artifacts_reviewed",
+      "rule": "type",
+      "expected_type": "list"
+    },
+    {
+      "path": "artifacts_reviewed",
+      "rule": "required"
+    },
+    {
+      "path": "artifacts_reviewed[].artifact_id",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "artifacts_reviewed[].artifact_id",
+      "rule": "required"
+    },
+    {
+      "path": "artifacts_reviewed[].artifact_reference",
+      "rule": "type",
+      "expected_type": "reference"
+    },
+    {
+      "path": "artifacts_reviewed[].artifact_reference",
+      "rule": "required"
+    },
+    {
+      "path": "artifacts_reviewed[].artifact_reference",
+      "rule": "reference_shape"
+    },
+    {
+      "path": "artifacts_reviewed[].artifact_reference.ref_document",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "artifacts_reviewed[].artifact_reference.ref_document",
+      "rule": "required"
+    },
+    {
+      "path": "artifacts_reviewed[].artifact_reference.ref_id",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "artifacts_reviewed[].artifact_reference.ref_id",
+      "rule": "required"
+    },
+    {
+      "path": "artifacts_reviewed[].artifact_reference.ref_version",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "artifacts_reviewed[].title",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "artifacts_reviewed[].outcome",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "artifacts_reviewed[].outcome",
+      "rule": "allowed",
+      "allowed": [
+        "approved",
+        "changes_required",
+        "rejected",
+        "pending"
+      ]
+    },
+    {
+      "path": "review_criteria",
+      "rule": "type",
+      "expected_type": "list"
+    },
+    {
+      "path": "review_criteria",
+      "rule": "required"
+    },
+    {
+      "path": "review_criteria[].criterion_id",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "review_criteria[].criterion_id",
+      "rule": "required"
+    },
+    {
+      "path": "review_criteria[].description",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "review_criteria[].description",
+      "rule": "required"
+    },
+    {
+      "path": "review_criteria[].basis_reference",
+      "rule": "type",
+      "expected_type": "reference"
+    },
+    {
+      "path": "review_criteria[].basis_reference",
+      "rule": "reference_shape"
+    },
+    {
+      "path": "review_criteria[].basis_reference.ref_document",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "review_criteria[].basis_reference.ref_document",
+      "rule": "required"
+    },
+    {
+      "path": "review_criteria[].basis_reference.ref_id",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "review_criteria[].result",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "review_criteria[].result",
+      "rule": "allowed",
+      "allowed": [
+        "met",
+        "partial",
+        "not_met",
+        "not_assessed"
+      ]
+    },
+    {
+      "path": "findings",
+      "rule": "type",
+      "expected_type": "list"
+    },
+    {
+      "path": "findings",
+      "rule": "required"
+    },
+    {
+      "path": "findings[].finding_id",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "findings[].finding_id",
+      "rule": "required"
+    },
+    {
+      "path": "findings[].description",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "findings[].description",
+      "rule": "required"
+    },
+    {
+      "path": "findings[].severity",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "findings[].severity",
+      "rule": "required"
+    },
+    {
+      "path": "findings[].severity",
+      "rule": "allowed",
+      "allowed": [
+        "blocking",
+        "major",
+        "minor",
+        "informational"
+      ]
+    },
+    {
+      "path": "findings[].related_criterion",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "findings[].related_criterion",
+      "rule": "reference_integrity",
+      "target_collection": "review_criteria",
+      "target_id_field": "criterion_id"
+    },
+    {
+      "path": "findings[].related_artifact",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "findings[].related_artifact",
+      "rule": "reference_integrity",
+      "target_collection": "artifacts_reviewed",
+      "target_id_field": "artifact_id"
+    },
+    {
+      "path": "findings[].status",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "findings[].status",
+      "rule": "allowed",
+      "allowed": [
+        "open",
+        "resolved",
+        "waived"
+      ]
+    },
+    {
+      "path": "risk_assessment",
+      "rule": "type",
+      "expected_type": "list"
+    },
+    {
+      "path": "risk_assessment[].risk_id",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "risk_assessment[].risk_id",
+      "rule": "required"
+    },
+    {
+      "path": "risk_assessment[].description",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "risk_assessment[].description",
+      "rule": "required"
+    },
+    {
+      "path": "risk_assessment[].likelihood",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "risk_assessment[].likelihood",
+      "rule": "allowed",
+      "allowed": [
+        "high",
+        "medium",
+        "low"
+      ]
+    },
+    {
+      "path": "risk_assessment[].impact",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "risk_assessment[].impact",
+      "rule": "allowed",
+      "allowed": [
+        "high",
+        "medium",
+        "low"
+      ]
+    },
+    {
+      "path": "risk_assessment[].rating",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "risk_assessment[].rating",
+      "rule": "allowed",
+      "allowed": [
+        "high",
+        "medium",
+        "low"
+      ]
+    },
+    {
+      "path": "risk_assessment[].mitigation",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "risk_assessment[].related_finding",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "risk_assessment[].related_finding",
+      "rule": "reference_integrity",
+      "target_collection": "findings",
+      "target_id_field": "finding_id"
+    },
+    {
+      "path": "required_changes",
+      "rule": "type",
+      "expected_type": "list"
+    },
+    {
+      "path": "required_changes[].change_id",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "required_changes[].change_id",
+      "rule": "required"
+    },
+    {
+      "path": "required_changes[].description",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "required_changes[].description",
+      "rule": "required"
+    },
+    {
+      "path": "required_changes[].related_finding",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "required_changes[].related_finding",
+      "rule": "reference_integrity",
+      "target_collection": "findings",
+      "target_id_field": "finding_id"
+    },
+    {
+      "path": "required_changes[].priority",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "required_changes[].priority",
+      "rule": "allowed",
+      "allowed": [
+        "blocking",
+        "high",
+        "medium",
+        "low"
+      ]
+    },
+    {
+      "path": "required_changes[].owner_role",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "required_changes[].status",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "required_changes[].status",
+      "rule": "allowed",
+      "allowed": [
+        "open",
+        "in_progress",
+        "done"
+      ]
+    },
+    {
+      "path": "open_questions",
+      "rule": "type",
+      "expected_type": "list"
+    },
+    {
+      "path": "open_questions[].question_id",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "open_questions[].question_id",
+      "rule": "required"
+    },
+    {
+      "path": "open_questions[].description",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "open_questions[].description",
+      "rule": "required"
+    },
+    {
+      "path": "open_questions[].blocking",
+      "rule": "type",
+      "expected_type": "boolean"
+    },
+    {
+      "path": "open_questions[].owner_role",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "open_questions[].status",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "open_questions[].status",
+      "rule": "allowed",
+      "allowed": [
+        "open",
+        "answered"
+      ]
+    },
+    {
+      "path": "approvals",
+      "rule": "type",
+      "expected_type": "list"
+    },
+    {
+      "path": "approvals",
+      "rule": "required"
+    },
+    {
+      "path": "approvals[].approval_id",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "approvals[].approval_id",
+      "rule": "required"
+    },
+    {
+      "path": "approvals[].artifact",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "approvals[].artifact",
+      "rule": "required"
+    },
+    {
+      "path": "approvals[].decision",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "approvals[].decision",
+      "rule": "required"
+    },
+    {
+      "path": "approvals[].decision",
+      "rule": "allowed",
+      "allowed": [
+        "approved",
+        "rejected",
+        "pending"
+      ]
+    },
+    {
+      "path": "approvals[].authority",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "approvals[].authority",
+      "rule": "required"
+    },
+    {
+      "path": "approvals[].authority",
+      "rule": "allowed",
+      "allowed": [
+        "product_owner",
+        "lead_architect",
+        "implementation_engineer"
+      ]
+    },
+    {
+      "path": "approvals[].review_reference",
+      "rule": "type",
+      "expected_type": "reference"
+    },
+    {
+      "path": "approvals[].review_reference",
+      "rule": "reference_shape"
+    },
+    {
+      "path": "approvals[].review_reference.ref_document",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "approvals[].review_reference.ref_document",
+      "rule": "required"
+    },
+    {
+      "path": "approvals[].review_reference.ref_id",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "approvals[].review_reference.ref_id",
+      "rule": "required"
+    },
+    {
+      "path": "approvals[].date",
+      "rule": "type",
+      "expected_type": "date"
+    },
+    {
+      "path": "approvals[].notes",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "metadata.schema_version",
+      "rule": "schema_version",
+      "note": "instance schema_version must match an available schema version"
+    }
+  ]
+}

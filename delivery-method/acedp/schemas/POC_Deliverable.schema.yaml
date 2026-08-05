@@ -1,0 +1,446 @@
+# =============================================================================
+# POC Deliverable Schema
+# -----------------------------------------------------------------------------
+# Schema Version:      1.0   (convenience copy; metadata.schema_version is authoritative)
+# Status:              Approved
+# Approved By:         lead_architect (technical approval), product_owner (acceptance)
+# Approval Date:       2026-06-30
+# Document Reference:  SPEC-004 POC Deliverable
+# Source of Truth:     acedp/docs/specifications/SPEC-004_POC_Deliverable.md
+# Convention:          STD-001 "Schema Conventions"
+#
+# Purpose:
+#   Documentation-first description of the canonical POC (Proof-of-Concept)
+#   Deliverable record: its scope, success criteria, test plan, validation
+#   results, risks, assumptions, and handoff requirements.
+#   NOT executable; no validation logic; no example/customer data.
+#
+# Common envelope (STD-001):
+#   metadata  ->  references  ->  <domain sections>  ->  approvals
+#
+# Conventions (shared across ACEDP schemas):
+#   - Keys/field names use snake_case; identifiers are "<section>_id".
+#   - Each field is documented as: { type, required, description }.
+#   - "type: list" sections describe a repeating element under "items:".
+#   - "type: reference" fields describe a structured external link under "fields:".
+#   - Enum values are listed under "allowed:".
+#   - metadata.schema_version is the AUTHORITATIVE schema version.
+#   - Internal links use a bare local "<section>_id"; external links are structured.
+#   - Provisional choices are marked inline with "# OPEN:".
+#   - "network_requirements" captures generic requirements only; it encodes no
+#     vendor- or platform-specific content.
+# =============================================================================
+
+# ----------------------------------------------------------------------------
+# metadata — about the POC Deliverable record itself
+# ----------------------------------------------------------------------------
+metadata:
+  poc_id:
+    type: string
+    required: true
+    description: Stable, unique identifier for this POC deliverable record.
+  poc_name:
+    type: string
+    required: true
+    description: Human-readable name of the POC deliverable.
+  schema_version:
+    type: string
+    required: true
+    description: AUTHORITATIVE version of this schema the record conforms to (e.g. "1.0").
+  document_reference:
+    type: string
+    required: true
+    description: Source specification. Fixed value "SPEC-004".
+  status:
+    type: string
+    required: true
+    description: Lifecycle status of the POC deliverable record.
+    allowed: [Draft, In Review, Approved, Superseded]   # per STD-001
+  version:
+    type: string
+    required: true
+    description: Record version as MAJOR.MINOR (per STD-001 versioning).
+  created_date:
+    type: date
+    required: true
+    description: Date the record was created (ISO 8601, YYYY-MM-DD).
+  last_updated:
+    type: date
+    required: true
+    description: Date the record was last changed (ISO 8601).
+  author:
+    type: string
+    required: false
+    description: Role or identity that authored the record.
+  owner:
+    type: string
+    required: false
+    description: Role accountable for the record.
+
+# ----------------------------------------------------------------------------
+# references — structured links to external artifacts
+# (Typically the approved Project Profile (SPEC-001) and Customer Discovery
+#  (SPEC-002) the POC is scoped against.)
+# ----------------------------------------------------------------------------
+references:
+  type: list
+  required: false
+  description: Structured links to external artifacts or instances.
+  items:
+    reference_id:
+      type: string
+      required: true
+      description: Local identifier for this reference entry.
+    ref_document:
+      type: string
+      required: true
+      description: Source specification or artifact type (e.g. "SPEC-001").
+    ref_id:
+      type: string
+      required: true
+      description: Identifier of the referenced instance.
+    ref_version:
+      type: string
+      required: false
+      description: Version of the referenced instance, if pinned.
+    relationship:
+      type: string
+      required: false
+      description: Nature of the link (e.g. "scoped_against", "derived_from").
+
+# ----------------------------------------------------------------------------
+# poc_scope — what the POC will and will not demonstrate
+# ----------------------------------------------------------------------------
+poc_scope:
+  objective:
+    type: string
+    required: true
+    description: The feasibility question the POC is intended to answer.
+  description:
+    type: string
+    required: false
+    description: Narrative description of the POC scope.
+  in_scope:
+    type: list[string]
+    required: true
+    description: Items explicitly within the POC's scope.
+  out_of_scope:
+    type: list[string]
+    required: true
+    description: Items explicitly excluded (e.g. production concerns).
+
+# ----------------------------------------------------------------------------
+# success_criteria — measurable conditions for POC acceptance
+# ----------------------------------------------------------------------------
+success_criteria:
+  type: list
+  required: true
+  description: Conditions that determine whether the POC succeeds.
+  items:
+    criterion_id:
+      type: string
+      required: true
+      description: Unique identifier for the criterion.
+    description:
+      type: string
+      required: true
+      description: The success condition.
+    measure:
+      type: string
+      required: true
+      description: How the criterion is verified as met.
+    result:
+      type: string
+      required: false
+      description: Outcome against the criterion.
+      allowed: [met, partial, not_met, not_assessed]
+
+# ----------------------------------------------------------------------------
+# test_plan — the tests that exercise the success criteria
+# ----------------------------------------------------------------------------
+test_plan:
+  type: list
+  required: true
+  description: Planned tests for the POC.
+  items:
+    test_id:
+      type: string
+      required: true
+      description: Unique identifier for the test.
+    description:
+      type: string
+      required: true
+      description: What the test exercises.
+    method:
+      type: string
+      required: false
+      description: How the test is performed.
+    preconditions:
+      type: list[string]
+      required: false
+      description: Conditions that must hold before the test runs.
+    expected_result:
+      type: string
+      required: false
+      description: The expected outcome.
+    related_criterion:
+      type: string
+      required: false
+      description: Internal link to a success_criteria.criterion_id.
+
+# ----------------------------------------------------------------------------
+# required_equipment — equipment needed to run the POC (definitions only)
+# ----------------------------------------------------------------------------
+required_equipment:
+  type: list
+  required: false
+  description: Equipment required to execute the POC.
+  items:
+    equipment_id:
+      type: string
+      required: true
+      description: Unique identifier for the equipment entry.
+    name:
+      type: string
+      required: true
+      description: Equipment name or designation.
+    type:
+      type: string
+      required: false
+      description: Category of equipment.
+    quantity:
+      type: integer
+      required: false
+      description: Number of units required.
+    purpose:
+      type: string
+      required: false
+      description: Why the equipment is needed.
+    provided_by:
+      type: string
+      required: false
+      description: Role responsible for providing the equipment.
+
+# ----------------------------------------------------------------------------
+# network_requirements — generic network requirements (no vendor specifics)
+# ----------------------------------------------------------------------------
+network_requirements:
+  type: list
+  required: false
+  description: Generic network requirements the POC depends on.
+  items:
+    requirement_id:
+      type: string
+      required: true
+      description: Unique identifier for the requirement.
+    category:
+      type: string
+      required: false
+      description: Class of requirement.
+      allowed: [connectivity, addressing, capacity, security, access, other]
+    description:
+      type: string
+      required: true
+      description: The requirement, stated generically.
+    mandatory:
+      type: boolean
+      required: false
+      description: Whether the requirement is mandatory for the POC.
+
+# ----------------------------------------------------------------------------
+# validation_results — outcomes of executing the test plan
+# ----------------------------------------------------------------------------
+validation_results:
+  type: list
+  required: false
+  description: Recorded results of POC validation.
+  items:
+    result_id:
+      type: string
+      required: true
+      description: Unique identifier for the result.
+    related_test:
+      type: string
+      required: false
+      description: Internal link to a test_plan.test_id.
+    outcome:
+      type: string
+      required: false
+      description: Result of the test.
+      allowed: [pass, fail, partial, not_run]
+    evidence_reference:
+      type: string
+      required: false
+      description: Pointer to supporting evidence (location/reference, not inline data).
+    notes:
+      type: string
+      required: false
+      description: Observations about the result.
+
+# ----------------------------------------------------------------------------
+# risks — risks associated with the POC or its conclusions
+# ----------------------------------------------------------------------------
+risks:
+  type: list
+  required: false
+  description: Risks identified in relation to the POC.
+  items:
+    risk_id:
+      type: string
+      required: true
+      description: Unique identifier for the risk.
+    description:
+      type: string
+      required: true
+      description: The risk.
+    likelihood:
+      type: string
+      required: false
+      description: Probability of the risk occurring.
+      allowed: [high, medium, low]
+    impact:
+      type: string
+      required: false
+      description: Consequence if the risk occurs.
+      allowed: [high, medium, low]
+    rating:
+      type: string
+      required: false
+      description: Overall risk rating.
+      allowed: [high, medium, low]
+    mitigation:
+      type: string
+      required: false
+      description: Proposed mitigation or response.
+
+# ----------------------------------------------------------------------------
+# assumptions — assumptions underlying the POC (consistent with SPEC-001/002)
+# ----------------------------------------------------------------------------
+assumptions:
+  type: list
+  required: false
+  description: Working assumptions underlying the POC.
+  items:
+    assumption_id:
+      type: string
+      required: true
+      description: Unique identifier for the assumption.
+    description:
+      type: string
+      required: true
+      description: The assumption being made.
+    status:
+      type: string
+      required: false
+      description: Confirmation state of the assumption.
+      allowed: [open, confirmed, invalidated]
+    impact:
+      type: string
+      required: false
+      description: Consequence if the assumption proves false.
+
+# ----------------------------------------------------------------------------
+# open_questions — unresolved questions about the POC
+# ----------------------------------------------------------------------------
+open_questions:
+  type: list
+  required: false
+  description: Questions left unresolved by the POC.
+  items:
+    question_id:
+      type: string
+      required: true
+      description: Unique identifier for the question.
+    description:
+      type: string
+      required: true
+      description: The unresolved question.
+    blocking:
+      type: boolean
+      required: false
+      description: Whether this question blocks POC acceptance.
+    owner_role:
+      type: string
+      required: false
+      description: Role responsible for resolving the question.
+    status:
+      type: string
+      required: false
+      description: Resolution state.
+      allowed: [open, answered]
+
+# ----------------------------------------------------------------------------
+# handoff_requirements — what is needed to hand the POC off
+# ----------------------------------------------------------------------------
+handoff_requirements:
+  recipient_role:
+    type: string
+    required: false
+    description: Role receiving the POC at handoff.
+  prerequisites:
+    type: list[string]
+    required: false
+    description: Conditions that must be met before handoff.
+  documentation_required:
+    type: list[string]
+    required: false
+    description: Documents that must accompany the handoff.
+  known_limitations:
+    type: list[string]
+    required: false
+    description: Disclosed limitations of the POC (must not be omitted).
+  production_path:
+    type: string
+    required: false
+    description: Description of the path from accepted POC to production scope.
+    # See SPEC-004 Open Questions (Accepted): POC-to-production path.
+
+# ----------------------------------------------------------------------------
+# approvals — standard review/approval block (acceptance of the POC)
+# ----------------------------------------------------------------------------
+approvals:
+  type: list
+  required: false
+  description: Approval/acceptance decisions taken via Engineering Review (SPEC-003).
+  items:
+    approval_id:
+      type: string
+      required: true
+      description: Unique identifier for the approval record.
+    artifact:
+      type: string
+      required: true
+      description: What is being approved (e.g. "POC Deliverable").
+    decision:
+      type: string
+      required: true
+      description: The acceptance decision.
+      allowed: [approved, rejected, pending]
+    authority:
+      type: string
+      required: true
+      description: >-
+        Canonical actor field — the role that made the decision. See the
+        SPEC-003 approval-authority matrix for the authority per artifact class.
+      allowed: [product_owner, lead_architect, implementation_engineer]
+    review_reference:
+      type: reference
+      required: false
+      description: Structured link to the Engineering Review (SPEC-003) record.
+      fields:
+        ref_document:
+          type: string
+          required: true
+          description: Fixed value "SPEC-003".
+        ref_id:
+          type: string
+          required: true
+          description: Identifier of the review record.
+    date:
+      type: date
+      required: false
+      description: Date of the decision (ISO 8601).
+    notes:
+      type: string
+      required: false
+      description: Conditions or rationale attached to the decision.

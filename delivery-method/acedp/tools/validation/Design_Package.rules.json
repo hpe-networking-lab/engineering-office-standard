@@ -1,0 +1,948 @@
+{
+  "artifact": "acedp-intermediate-ruleset",
+  "format_version": "0.1",
+  "schema_id": "SPEC-005",
+  "schema_version": "1.0",
+  "source": "acedp/schemas/Design_Package.schema.yaml",
+  "rule_count": 183,
+  "rules": [
+    {
+      "path": "metadata",
+      "rule": "required"
+    },
+    {
+      "path": "metadata.design_id",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "metadata.design_id",
+      "rule": "required"
+    },
+    {
+      "path": "metadata.design_name",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "metadata.design_name",
+      "rule": "required"
+    },
+    {
+      "path": "metadata.schema_version",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "metadata.schema_version",
+      "rule": "required"
+    },
+    {
+      "path": "metadata.document_reference",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "metadata.document_reference",
+      "rule": "required"
+    },
+    {
+      "path": "metadata.status",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "metadata.status",
+      "rule": "required"
+    },
+    {
+      "path": "metadata.status",
+      "rule": "allowed",
+      "allowed": [
+        "Draft",
+        "In Review",
+        "Approved",
+        "Superseded"
+      ]
+    },
+    {
+      "path": "metadata.version",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "metadata.version",
+      "rule": "required"
+    },
+    {
+      "path": "metadata.created_date",
+      "rule": "type",
+      "expected_type": "date"
+    },
+    {
+      "path": "metadata.created_date",
+      "rule": "required"
+    },
+    {
+      "path": "metadata.last_updated",
+      "rule": "type",
+      "expected_type": "date"
+    },
+    {
+      "path": "metadata.last_updated",
+      "rule": "required"
+    },
+    {
+      "path": "metadata.author",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "metadata.owner",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "references",
+      "rule": "type",
+      "expected_type": "list"
+    },
+    {
+      "path": "references[].reference_id",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "references[].reference_id",
+      "rule": "required"
+    },
+    {
+      "path": "references[].ref_document",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "references[].ref_document",
+      "rule": "required"
+    },
+    {
+      "path": "references[].ref_id",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "references[].ref_id",
+      "rule": "required"
+    },
+    {
+      "path": "references[].ref_version",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "references[].relationship",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "design_scope",
+      "rule": "required"
+    },
+    {
+      "path": "design_scope.objective",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "design_scope.objective",
+      "rule": "required"
+    },
+    {
+      "path": "design_scope.description",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "design_scope.design_type",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "design_scope.design_type",
+      "rule": "allowed",
+      "allowed": [
+        "greenfield",
+        "brownfield",
+        "migration",
+        "expansion"
+      ]
+    },
+    {
+      "path": "design_scope.in_scope",
+      "rule": "type",
+      "expected_type": "list[string]"
+    },
+    {
+      "path": "design_scope.in_scope",
+      "rule": "required"
+    },
+    {
+      "path": "design_scope.out_of_scope",
+      "rule": "type",
+      "expected_type": "list[string]"
+    },
+    {
+      "path": "design_scope.out_of_scope",
+      "rule": "required"
+    },
+    {
+      "path": "high_level_design",
+      "rule": "required"
+    },
+    {
+      "path": "high_level_design.summary",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "high_level_design.summary",
+      "rule": "required"
+    },
+    {
+      "path": "high_level_design.architecture_overview",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "high_level_design.topology_description",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "high_level_design.design_principles",
+      "rule": "type",
+      "expected_type": "list[string]"
+    },
+    {
+      "path": "high_level_design.diagrams",
+      "rule": "type",
+      "expected_type": "list"
+    },
+    {
+      "path": "high_level_design.diagrams[].diagram_id",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "high_level_design.diagrams[].diagram_id",
+      "rule": "required"
+    },
+    {
+      "path": "high_level_design.diagrams[].title",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "high_level_design.diagrams[].description",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "low_level_design.summary",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "low_level_design.components",
+      "rule": "type",
+      "expected_type": "list"
+    },
+    {
+      "path": "low_level_design.components[].component_id",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "low_level_design.components[].component_id",
+      "rule": "required"
+    },
+    {
+      "path": "low_level_design.components[].name",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "low_level_design.components[].name",
+      "rule": "required"
+    },
+    {
+      "path": "low_level_design.components[].type",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "low_level_design.components[].description",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "low_level_design.components[].configuration_intent",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "low_level_design.dependencies",
+      "rule": "type",
+      "expected_type": "list[string]"
+    },
+    {
+      "path": "vlan_ip_plan.vlans",
+      "rule": "type",
+      "expected_type": "list"
+    },
+    {
+      "path": "vlan_ip_plan.vlans[].vlan_id",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "vlan_ip_plan.vlans[].vlan_id",
+      "rule": "required"
+    },
+    {
+      "path": "vlan_ip_plan.vlans[].vlan_number",
+      "rule": "type",
+      "expected_type": "integer"
+    },
+    {
+      "path": "vlan_ip_plan.vlans[].name",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "vlan_ip_plan.vlans[].purpose",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "vlan_ip_plan.vlans[].l3_gateway",
+      "rule": "type",
+      "expected_type": "boolean"
+    },
+    {
+      "path": "vlan_ip_plan.ip_subnets",
+      "rule": "type",
+      "expected_type": "list"
+    },
+    {
+      "path": "vlan_ip_plan.ip_subnets[].subnet_id",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "vlan_ip_plan.ip_subnets[].subnet_id",
+      "rule": "required"
+    },
+    {
+      "path": "vlan_ip_plan.ip_subnets[].cidr",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "vlan_ip_plan.ip_subnets[].purpose",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "vlan_ip_plan.ip_subnets[].vlan_ref",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "vlan_ip_plan.ip_subnets[].vlan_ref",
+      "rule": "reference_integrity",
+      "target_collection": "vlan_ip_plan.vlans",
+      "target_id_field": "vlan_id"
+    },
+    {
+      "path": "vlan_ip_plan.addressing_notes",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "wlan_ssid_plan.ssids",
+      "rule": "type",
+      "expected_type": "list"
+    },
+    {
+      "path": "wlan_ssid_plan.ssids[].ssid_id",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "wlan_ssid_plan.ssids[].ssid_id",
+      "rule": "required"
+    },
+    {
+      "path": "wlan_ssid_plan.ssids[].name",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "wlan_ssid_plan.ssids[].purpose",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "wlan_ssid_plan.ssids[].security_type",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "wlan_ssid_plan.ssids[].security_type",
+      "rule": "allowed",
+      "allowed": [
+        "open",
+        "psk",
+        "enterprise"
+      ]
+    },
+    {
+      "path": "wlan_ssid_plan.ssids[].band",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "wlan_ssid_plan.ssids[].band",
+      "rule": "allowed",
+      "allowed": [
+        "2_4ghz",
+        "5ghz",
+        "6ghz",
+        "dual_band",
+        "tri_band"
+      ]
+    },
+    {
+      "path": "wlan_ssid_plan.ssids[].vlan_ref",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "wlan_ssid_plan.ssids[].vlan_ref",
+      "rule": "reference_integrity",
+      "target_collection": "vlan_ip_plan.vlans",
+      "target_id_field": "vlan_id"
+    },
+    {
+      "path": "wlan_ssid_plan.wlan_notes",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "switching_plan.switches",
+      "rule": "type",
+      "expected_type": "list"
+    },
+    {
+      "path": "switching_plan.switches[].switch_id",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "switching_plan.switches[].switch_id",
+      "rule": "required"
+    },
+    {
+      "path": "switching_plan.switches[].role",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "switching_plan.switches[].role",
+      "rule": "allowed",
+      "allowed": [
+        "access",
+        "distribution",
+        "core",
+        "collapsed_core"
+      ]
+    },
+    {
+      "path": "switching_plan.switches[].description",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "switching_plan.switches[].port_profile_intent",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "switching_plan.uplinks",
+      "rule": "type",
+      "expected_type": "list"
+    },
+    {
+      "path": "switching_plan.uplinks[].uplink_id",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "switching_plan.uplinks[].uplink_id",
+      "rule": "required"
+    },
+    {
+      "path": "switching_plan.uplinks[].from_ref",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "switching_plan.uplinks[].from_ref",
+      "rule": "reference_integrity",
+      "target_collection": "switching_plan.switches",
+      "target_id_field": "switch_id"
+    },
+    {
+      "path": "switching_plan.uplinks[].to_ref",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "switching_plan.uplinks[].to_ref",
+      "rule": "reference_integrity",
+      "target_collection": "switching_plan.switches",
+      "target_id_field": "switch_id"
+    },
+    {
+      "path": "switching_plan.uplinks[].link_type",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "switching_plan.switching_notes",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "security_segmentation_plan.segments",
+      "rule": "type",
+      "expected_type": "list"
+    },
+    {
+      "path": "security_segmentation_plan.segments[].segment_id",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "security_segmentation_plan.segments[].segment_id",
+      "rule": "required"
+    },
+    {
+      "path": "security_segmentation_plan.segments[].name",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "security_segmentation_plan.segments[].purpose",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "security_segmentation_plan.segments[].members",
+      "rule": "type",
+      "expected_type": "list[string]"
+    },
+    {
+      "path": "security_segmentation_plan.policies",
+      "rule": "type",
+      "expected_type": "list"
+    },
+    {
+      "path": "security_segmentation_plan.policies[].policy_id",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "security_segmentation_plan.policies[].policy_id",
+      "rule": "required"
+    },
+    {
+      "path": "security_segmentation_plan.policies[].description",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "security_segmentation_plan.policies[].description",
+      "rule": "required"
+    },
+    {
+      "path": "security_segmentation_plan.policies[].action",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "security_segmentation_plan.policies[].action",
+      "rule": "allowed",
+      "allowed": [
+        "permit",
+        "deny",
+        "inspect"
+      ]
+    },
+    {
+      "path": "security_segmentation_plan.policies[].source_ref",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "security_segmentation_plan.policies[].source_ref",
+      "rule": "reference_integrity",
+      "target_collection": "segments",
+      "target_id_field": "segment_id"
+    },
+    {
+      "path": "security_segmentation_plan.policies[].destination_ref",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "security_segmentation_plan.policies[].destination_ref",
+      "rule": "reference_integrity",
+      "target_collection": "segments",
+      "target_id_field": "segment_id"
+    },
+    {
+      "path": "security_segmentation_plan.segmentation_notes",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "mist_organization_readiness.readiness_status",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "mist_organization_readiness.readiness_status",
+      "rule": "allowed",
+      "allowed": [
+        "not_ready",
+        "partial",
+        "ready"
+      ]
+    },
+    {
+      "path": "mist_organization_readiness.required_constructs",
+      "rule": "type",
+      "expected_type": "list[string]"
+    },
+    {
+      "path": "mist_organization_readiness.prerequisites",
+      "rule": "type",
+      "expected_type": "list[string]"
+    },
+    {
+      "path": "mist_organization_readiness.gaps",
+      "rule": "type",
+      "expected_type": "list[string]"
+    },
+    {
+      "path": "mist_organization_readiness.notes",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "customer_documentation.documents",
+      "rule": "type",
+      "expected_type": "list"
+    },
+    {
+      "path": "customer_documentation.documents[].doc_id",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "customer_documentation.documents[].doc_id",
+      "rule": "required"
+    },
+    {
+      "path": "customer_documentation.documents[].title",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "customer_documentation.documents[].audience",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "customer_documentation.documents[].purpose",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "customer_documentation.documentation_notes",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "risks",
+      "rule": "type",
+      "expected_type": "list"
+    },
+    {
+      "path": "risks[].risk_id",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "risks[].risk_id",
+      "rule": "required"
+    },
+    {
+      "path": "risks[].description",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "risks[].description",
+      "rule": "required"
+    },
+    {
+      "path": "risks[].likelihood",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "risks[].likelihood",
+      "rule": "allowed",
+      "allowed": [
+        "high",
+        "medium",
+        "low"
+      ]
+    },
+    {
+      "path": "risks[].impact",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "risks[].impact",
+      "rule": "allowed",
+      "allowed": [
+        "high",
+        "medium",
+        "low"
+      ]
+    },
+    {
+      "path": "risks[].rating",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "risks[].rating",
+      "rule": "allowed",
+      "allowed": [
+        "high",
+        "medium",
+        "low"
+      ]
+    },
+    {
+      "path": "risks[].mitigation",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "assumptions",
+      "rule": "type",
+      "expected_type": "list"
+    },
+    {
+      "path": "assumptions[].assumption_id",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "assumptions[].assumption_id",
+      "rule": "required"
+    },
+    {
+      "path": "assumptions[].description",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "assumptions[].description",
+      "rule": "required"
+    },
+    {
+      "path": "assumptions[].status",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "assumptions[].status",
+      "rule": "allowed",
+      "allowed": [
+        "open",
+        "confirmed",
+        "invalidated"
+      ]
+    },
+    {
+      "path": "assumptions[].impact",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "open_questions",
+      "rule": "type",
+      "expected_type": "list"
+    },
+    {
+      "path": "open_questions[].question_id",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "open_questions[].question_id",
+      "rule": "required"
+    },
+    {
+      "path": "open_questions[].description",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "open_questions[].description",
+      "rule": "required"
+    },
+    {
+      "path": "open_questions[].blocking",
+      "rule": "type",
+      "expected_type": "boolean"
+    },
+    {
+      "path": "open_questions[].owner_role",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "open_questions[].status",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "open_questions[].status",
+      "rule": "allowed",
+      "allowed": [
+        "open",
+        "answered"
+      ]
+    },
+    {
+      "path": "approvals",
+      "rule": "type",
+      "expected_type": "list"
+    },
+    {
+      "path": "approvals[].approval_id",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "approvals[].approval_id",
+      "rule": "required"
+    },
+    {
+      "path": "approvals[].artifact",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "approvals[].artifact",
+      "rule": "required"
+    },
+    {
+      "path": "approvals[].decision",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "approvals[].decision",
+      "rule": "required"
+    },
+    {
+      "path": "approvals[].decision",
+      "rule": "allowed",
+      "allowed": [
+        "approved",
+        "rejected",
+        "pending"
+      ]
+    },
+    {
+      "path": "approvals[].authority",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "approvals[].authority",
+      "rule": "required"
+    },
+    {
+      "path": "approvals[].authority",
+      "rule": "allowed",
+      "allowed": [
+        "product_owner",
+        "lead_architect",
+        "implementation_engineer"
+      ]
+    },
+    {
+      "path": "approvals[].review_reference",
+      "rule": "type",
+      "expected_type": "reference"
+    },
+    {
+      "path": "approvals[].review_reference",
+      "rule": "reference_shape"
+    },
+    {
+      "path": "approvals[].review_reference.ref_document",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "approvals[].review_reference.ref_document",
+      "rule": "required"
+    },
+    {
+      "path": "approvals[].review_reference.ref_id",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "approvals[].review_reference.ref_id",
+      "rule": "required"
+    },
+    {
+      "path": "approvals[].date",
+      "rule": "type",
+      "expected_type": "date"
+    },
+    {
+      "path": "approvals[].notes",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "metadata.schema_version",
+      "rule": "schema_version",
+      "note": "instance schema_version must match an available schema version"
+    }
+  ]
+}

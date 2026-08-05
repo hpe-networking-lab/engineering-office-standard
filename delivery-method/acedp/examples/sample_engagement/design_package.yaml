@@ -1,0 +1,54 @@
+# Sample Design Package (SPEC-005)
+# Fictional, non-customer sample data. For pipeline demonstration only.
+metadata:
+  design_id: DP-NW-1
+  design_name: sample-design_name
+  schema_version: '1.0'
+  document_reference: SPEC-005
+  status: Approved
+  version: '1.0'
+  created_date: '2026-03-01'
+  last_updated: '2026-03-15'
+  author: lead_architect
+  owner: product_owner
+design_scope:
+  objective: Campus refresh design.
+  in_scope:
+  - WLAN
+  - Switching
+  out_of_scope:
+  - WAN
+high_level_design:
+  summary: Two-tier campus with centralised WLAN.
+vlan_ip_plan:
+  vlans:
+  - vlan_id: VL-1
+    vlan_number: 10
+    name: Data
+    purpose: User data
+  ip_subnets:
+  - subnet_id: SUB-1
+    cidr: 10.10.0.0/24
+    purpose: Data
+    vlan_ref: VL-1
+references:
+- reference_id: R1
+  ref_document: SPEC-001
+  ref_id: PP-NW-1
+  relationship: designed_from
+- reference_id: R2
+  ref_document: SPEC-002
+  ref_id: CD-NW-1
+  relationship: designed_from
+- reference_id: R3
+  ref_document: SPEC-003
+  ref_id: ER-NW-1
+  relationship: authorized_by
+approvals:
+- approval_id: A1
+  artifact: Design Package
+  decision: approved
+  authority: lead_architect
+  review_reference:
+    ref_document: SPEC-003
+    ref_id: ER-NW-1

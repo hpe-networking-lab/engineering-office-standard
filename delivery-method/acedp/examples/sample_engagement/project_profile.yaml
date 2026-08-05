@@ -1,0 +1,54 @@
+# Sample Project Profile (SPEC-001)
+# Fictional, non-customer sample data. For pipeline demonstration only.
+metadata:
+  profile_id: PP-NW-1
+  profile_name: Northwind Campus Network Profile
+  schema_version: '1.0'
+  document_reference: SPEC-001
+  status: Approved
+  version: '1.0'
+  created_date: '2026-03-01'
+  last_updated: '2026-03-15'
+  author: lead_architect
+  owner: product_owner
+project:
+  project_id: PRJ-NW-1
+  name: Northwind Campus Refresh
+  summary: Fictional campus wireless and wired refresh.
+customer:
+  customer_id: CUST-NW
+  name: Northwind Traders (fictional)
+business_objectives:
+- objective_id: OBJ-1
+  description: Modernise campus connectivity.
+  priority: high
+  measure: POC accepted.
+scope:
+  in_scope:
+  - Campus WLAN
+  - Access switching
+  out_of_scope:
+  - WAN
+  description: Fictional scope.
+stakeholders:
+- stakeholder_id: STK-1
+  role: Product Owner
+success_criteria:
+- criterion_id: SC-1
+  description: Design approved.
+  measure: Approval recorded.
+  linked_objective: OBJ-1
+  status: met
+approvals:
+- approval_id: A1
+  artifact: Project Profile
+  decision: approved
+  authority: product_owner
+  review_reference:
+    ref_document: SPEC-003
+    ref_id: ER-NW-1
+references:
+- reference_id: R1
+  ref_document: SPEC-003
+  ref_id: ER-NW-1
+  relationship: approved_by

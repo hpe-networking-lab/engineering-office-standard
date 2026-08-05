@@ -1,0 +1,603 @@
+{
+  "artifact": "acedp-intermediate-ruleset",
+  "format_version": "0.1",
+  "schema_id": "SPEC-001",
+  "schema_version": "1.0",
+  "source": "acedp/schemas/Project_Profile.schema.yaml",
+  "rule_count": 120,
+  "rules": [
+    {
+      "path": "metadata",
+      "rule": "required"
+    },
+    {
+      "path": "metadata.profile_id",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "metadata.profile_id",
+      "rule": "required"
+    },
+    {
+      "path": "metadata.profile_name",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "metadata.profile_name",
+      "rule": "required"
+    },
+    {
+      "path": "metadata.schema_version",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "metadata.schema_version",
+      "rule": "required"
+    },
+    {
+      "path": "metadata.document_reference",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "metadata.document_reference",
+      "rule": "required"
+    },
+    {
+      "path": "metadata.status",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "metadata.status",
+      "rule": "required"
+    },
+    {
+      "path": "metadata.status",
+      "rule": "allowed",
+      "allowed": [
+        "Draft",
+        "In Review",
+        "Approved",
+        "Superseded"
+      ]
+    },
+    {
+      "path": "metadata.version",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "metadata.version",
+      "rule": "required"
+    },
+    {
+      "path": "metadata.created_date",
+      "rule": "type",
+      "expected_type": "date"
+    },
+    {
+      "path": "metadata.created_date",
+      "rule": "required"
+    },
+    {
+      "path": "metadata.last_updated",
+      "rule": "type",
+      "expected_type": "date"
+    },
+    {
+      "path": "metadata.last_updated",
+      "rule": "required"
+    },
+    {
+      "path": "metadata.author",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "metadata.owner",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "references",
+      "rule": "type",
+      "expected_type": "list"
+    },
+    {
+      "path": "references[].reference_id",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "references[].reference_id",
+      "rule": "required"
+    },
+    {
+      "path": "references[].ref_document",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "references[].ref_document",
+      "rule": "required"
+    },
+    {
+      "path": "references[].ref_id",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "references[].ref_id",
+      "rule": "required"
+    },
+    {
+      "path": "references[].ref_version",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "references[].relationship",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "project",
+      "rule": "required"
+    },
+    {
+      "path": "project.project_id",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "project.project_id",
+      "rule": "required"
+    },
+    {
+      "path": "project.name",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "project.name",
+      "rule": "required"
+    },
+    {
+      "path": "project.summary",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "project.summary",
+      "rule": "required"
+    },
+    {
+      "path": "project.type",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "project.start_date",
+      "rule": "type",
+      "expected_type": "date"
+    },
+    {
+      "path": "project.target_date",
+      "rule": "type",
+      "expected_type": "date"
+    },
+    {
+      "path": "customer",
+      "rule": "required"
+    },
+    {
+      "path": "customer.customer_id",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "customer.customer_id",
+      "rule": "required"
+    },
+    {
+      "path": "customer.name",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "customer.name",
+      "rule": "required"
+    },
+    {
+      "path": "customer.industry",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "customer.primary_contact_role",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "customer.notes",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "business_objectives",
+      "rule": "type",
+      "expected_type": "list"
+    },
+    {
+      "path": "business_objectives",
+      "rule": "required"
+    },
+    {
+      "path": "business_objectives[].objective_id",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "business_objectives[].objective_id",
+      "rule": "required"
+    },
+    {
+      "path": "business_objectives[].description",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "business_objectives[].description",
+      "rule": "required"
+    },
+    {
+      "path": "business_objectives[].priority",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "business_objectives[].priority",
+      "rule": "allowed",
+      "allowed": [
+        "high",
+        "medium",
+        "low"
+      ]
+    },
+    {
+      "path": "business_objectives[].measure",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "scope",
+      "rule": "required"
+    },
+    {
+      "path": "scope.in_scope",
+      "rule": "type",
+      "expected_type": "list[string]"
+    },
+    {
+      "path": "scope.in_scope",
+      "rule": "required"
+    },
+    {
+      "path": "scope.out_of_scope",
+      "rule": "type",
+      "expected_type": "list[string]"
+    },
+    {
+      "path": "scope.out_of_scope",
+      "rule": "required"
+    },
+    {
+      "path": "scope.description",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "assumptions",
+      "rule": "type",
+      "expected_type": "list"
+    },
+    {
+      "path": "assumptions[].assumption_id",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "assumptions[].assumption_id",
+      "rule": "required"
+    },
+    {
+      "path": "assumptions[].description",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "assumptions[].description",
+      "rule": "required"
+    },
+    {
+      "path": "assumptions[].status",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "assumptions[].status",
+      "rule": "allowed",
+      "allowed": [
+        "open",
+        "confirmed",
+        "invalidated"
+      ]
+    },
+    {
+      "path": "assumptions[].impact",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "constraints",
+      "rule": "type",
+      "expected_type": "list"
+    },
+    {
+      "path": "constraints[].constraint_id",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "constraints[].constraint_id",
+      "rule": "required"
+    },
+    {
+      "path": "constraints[].type",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "constraints[].type",
+      "rule": "allowed",
+      "allowed": [
+        "technical",
+        "operational",
+        "timing",
+        "regulatory",
+        "budget"
+      ]
+    },
+    {
+      "path": "constraints[].description",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "constraints[].description",
+      "rule": "required"
+    },
+    {
+      "path": "constraints[].severity",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "constraints[].severity",
+      "rule": "allowed",
+      "allowed": [
+        "high",
+        "medium",
+        "low"
+      ]
+    },
+    {
+      "path": "stakeholders",
+      "rule": "type",
+      "expected_type": "list"
+    },
+    {
+      "path": "stakeholders",
+      "rule": "required"
+    },
+    {
+      "path": "stakeholders[].stakeholder_id",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "stakeholders[].stakeholder_id",
+      "rule": "required"
+    },
+    {
+      "path": "stakeholders[].role",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "stakeholders[].role",
+      "rule": "required"
+    },
+    {
+      "path": "stakeholders[].responsibility",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "stakeholders[].approval_authority",
+      "rule": "type",
+      "expected_type": "boolean"
+    },
+    {
+      "path": "stakeholders[].contact_reference",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "success_criteria",
+      "rule": "type",
+      "expected_type": "list"
+    },
+    {
+      "path": "success_criteria",
+      "rule": "required"
+    },
+    {
+      "path": "success_criteria[].criterion_id",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "success_criteria[].criterion_id",
+      "rule": "required"
+    },
+    {
+      "path": "success_criteria[].description",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "success_criteria[].description",
+      "rule": "required"
+    },
+    {
+      "path": "success_criteria[].measure",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "success_criteria[].measure",
+      "rule": "required"
+    },
+    {
+      "path": "success_criteria[].linked_objective",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "success_criteria[].linked_objective",
+      "rule": "reference_integrity",
+      "target_collection": "business_objectives",
+      "target_id_field": "objective_id"
+    },
+    {
+      "path": "success_criteria[].status",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "success_criteria[].status",
+      "rule": "allowed",
+      "allowed": [
+        "pending",
+        "met",
+        "not_met"
+      ]
+    },
+    {
+      "path": "approvals",
+      "rule": "type",
+      "expected_type": "list"
+    },
+    {
+      "path": "approvals[].approval_id",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "approvals[].approval_id",
+      "rule": "required"
+    },
+    {
+      "path": "approvals[].artifact",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "approvals[].artifact",
+      "rule": "required"
+    },
+    {
+      "path": "approvals[].decision",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "approvals[].decision",
+      "rule": "required"
+    },
+    {
+      "path": "approvals[].decision",
+      "rule": "allowed",
+      "allowed": [
+        "approved",
+        "rejected",
+        "pending"
+      ]
+    },
+    {
+      "path": "approvals[].authority",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "approvals[].authority",
+      "rule": "required"
+    },
+    {
+      "path": "approvals[].authority",
+      "rule": "allowed",
+      "allowed": [
+        "product_owner",
+        "lead_architect",
+        "implementation_engineer"
+      ]
+    },
+    {
+      "path": "approvals[].review_reference",
+      "rule": "type",
+      "expected_type": "reference"
+    },
+    {
+      "path": "approvals[].review_reference",
+      "rule": "reference_shape"
+    },
+    {
+      "path": "approvals[].review_reference.ref_document",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "approvals[].review_reference.ref_document",
+      "rule": "required"
+    },
+    {
+      "path": "approvals[].review_reference.ref_id",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "approvals[].review_reference.ref_id",
+      "rule": "required"
+    },
+    {
+      "path": "approvals[].date",
+      "rule": "type",
+      "expected_type": "date"
+    },
+    {
+      "path": "approvals[].notes",
+      "rule": "type",
+      "expected_type": "string"
+    },
+    {
+      "path": "metadata.schema_version",
+      "rule": "schema_version",
+      "note": "instance schema_version must match an available schema version"
+    }
+  ]
+}

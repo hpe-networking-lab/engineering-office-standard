@@ -1,0 +1,60 @@
+# Sample Mist Organization Generation Intent (SPEC-007)
+# Fictional, non-customer sample data. For pipeline demonstration only.
+metadata:
+  generation_id: MG-NW-1
+  generation_name: sample-generation_name
+  schema_version: '1.0'
+  document_reference: SPEC-007
+  status: Approved
+  version: '1.0'
+  created_date: '2026-03-01'
+  last_updated: '2026-03-15'
+  author: lead_architect
+  owner: product_owner
+generation_scope:
+  objective: Prepare Northwind org intent.
+  in_scope:
+  - Org
+  - Sites
+  - Templates
+  out_of_scope:
+  - Automation
+organization_intent:
+  summary: Single org, one site group.
+site_intent:
+- site_id: S-1
+  name_intent: Campus-A
+  purpose: Primary campus
+template_intent:
+- template_id: T-1
+  template_type: wlan
+  scope_level: org
+  purpose: Standard WLAN
+wlan_intent:
+- wlan_id: W-1
+  ssid_name_intent: NW-Corp
+  purpose: Corporate
+  security_intent: enterprise
+  template_ref: T-1
+inventory_intent:
+- inventory_id: INV-1
+  device_role: ap
+  quantity_intent: 12
+  site_ref: S-1
+references:
+- reference_id: R1
+  ref_document: SPEC-005
+  ref_id: DP-NW-1
+  relationship: generated_from
+- reference_id: R2
+  ref_document: SPEC-006
+  ref_id: MR-NW-1
+  relationship: gated_by
+approvals:
+- approval_id: A1
+  artifact: Mist Organization Generation
+  decision: approved
+  authority: lead_architect
+  review_reference:
+    ref_document: SPEC-003
+    ref_id: ER-NW-1

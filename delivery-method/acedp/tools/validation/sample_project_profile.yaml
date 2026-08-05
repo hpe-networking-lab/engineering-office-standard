@@ -1,0 +1,74 @@
+# Sample Project Profile instance — placeholder, non-customer data.
+# Conforms to Project_Profile.schema.yaml (SPEC-001, v1.0). For validator testing only.
+metadata:
+  profile_id: PP-SAMPLE-001
+  profile_name: Sample Project Profile
+  schema_version: "1.0"
+  document_reference: SPEC-001
+  status: Draft
+  version: "0.1"
+  created_date: "2026-01-01"
+  last_updated: "2026-01-02"
+  author: lead_architect
+  owner: product_owner
+project:
+  project_id: PRJ-SAMPLE-001
+  name: Sample Network Refresh
+  summary: A placeholder project used only to exercise the validator.
+  type: greenfield
+  start_date: "2026-02-01"
+  target_date: "2026-06-01"
+customer:
+  customer_id: CUST-SAMPLE-001
+  name: Example Organization
+  industry: Example Sector
+  primary_contact_role: Network Lead
+  notes: Placeholder customer for validation testing only.
+business_objectives:
+  - objective_id: OBJ-1
+    description: Demonstrate a conformant instance.
+    priority: high
+    measure: Validator returns conformant.
+scope:
+  in_scope:
+    - Sample in-scope item.
+  out_of_scope:
+    - Sample out-of-scope item.
+  description: Placeholder scope.
+assumptions:
+  - assumption_id: ASM-1
+    description: Sample assumption.
+    status: open
+    impact: None.
+constraints:
+  - constraint_id: CON-1
+    type: technical
+    description: Sample constraint.
+    severity: low
+stakeholders:
+  - stakeholder_id: STK-1
+    role: Product Owner
+    responsibility: Direction.
+    approval_authority: true
+    contact_reference: ref-placeholder
+success_criteria:
+  - criterion_id: SC-1
+    description: Instance validates cleanly.
+    measure: Zero error findings.
+    linked_objective: OBJ-1
+    status: pending
+approvals:
+  - approval_id: APR-1
+    artifact: Project Profile
+    decision: approved
+    authority: lead_architect
+    review_reference:
+      ref_document: SPEC-003
+      ref_id: ER-SAMPLE-1
+    date: "2026-01-03"
+    notes: Sample approval.
+references:
+  - reference_id: REF-1
+    ref_document: SPEC-003
+    ref_id: ER-SAMPLE-1
+    relationship: relates_to

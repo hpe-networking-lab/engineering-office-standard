@@ -1,0 +1,40 @@
+# Sample Mist Organization Readiness (SPEC-006)
+# Fictional, non-customer sample data. For pipeline demonstration only.
+metadata:
+  readiness_id: MR-NW-1
+  readiness_name: sample-readiness_name
+  schema_version: '1.0'
+  document_reference: SPEC-006
+  status: Approved
+  version: '1.0'
+  created_date: '2026-03-01'
+  last_updated: '2026-03-15'
+  author: lead_architect
+  owner: product_owner
+readiness_scope:
+  objective: Assess org-prep readiness.
+  overall_readiness: ready
+  rationale: All mandatory categories sufficient.
+readiness_categories:
+- category_id: CAT-1
+  category: org_site_structure
+  status: sufficient
+  mandatory: true
+required_mist_constructs:
+- construct_id: MC-1
+  construct: site
+  readiness_status: present
+  category_ref: CAT-1
+references:
+- reference_id: R1
+  ref_document: SPEC-005
+  ref_id: DP-NW-1
+  relationship: assessed_from
+approvals:
+- approval_id: A1
+  artifact: Mist Organization Readiness
+  decision: approved
+  authority: lead_architect
+  review_reference:
+    ref_document: SPEC-003
+    ref_id: ER-NW-1

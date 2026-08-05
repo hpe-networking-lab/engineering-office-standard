@@ -1,0 +1,47 @@
+# Sample Project Profile instance -- placeholder, non-customer data (cross-doc set).
+# Its external references point to engineering_review.yaml (SPEC-003, ER-1).
+metadata:
+  profile_id: PP-SET-1
+  profile_name: sample-profile_name
+  schema_version: '1.0'
+  document_reference: SPEC-001
+  status: Draft
+  version: sample-version
+  created_date: '2026-01-01'
+  last_updated: '2026-01-01'
+project:
+  project_id: sample-project_id
+  name: sample-name
+  summary: sample-summary
+customer:
+  customer_id: sample-customer_id
+  name: sample-name
+business_objectives:
+- objective_id: OBJ-1
+  description: sample-description
+scope:
+  in_scope:
+  - sample
+  out_of_scope:
+  - sample
+stakeholders:
+- stakeholder_id: sample-stakeholder_id
+  role: sample-role
+success_criteria:
+- criterion_id: sample-criterion_id
+  description: sample-description
+  measure: sample-measure
+  linked_objective: OBJ-1
+approvals:
+- approval_id: A1
+  artifact: Project Profile
+  decision: approved
+  authority: lead_architect
+  review_reference:
+    ref_document: SPEC-003
+    ref_id: ER-1
+references:
+- reference_id: R1
+  ref_document: SPEC-003
+  ref_id: ER-1
+  relationship: relates_to
