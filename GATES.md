@@ -110,6 +110,5 @@ ability. **Code-mode / single-tool connectors:** some connectors funnel every op
 When a connector refuses a write with `confirmation_required` (or any live-system config write), ALWAYS stop,
 state the specific change to the Human in chat, and get an explicit "yes" before re-invoking with
 `confirmed: true`. Never self-confirm a write on your own judgment. This makes write-approval consistent:
-every gated write pauses and asks; reads run free. In an unattended context there is no Human to ask, so a
-gated write cannot proceed — which is why unattended tasks stay read-only. (This is about live-system
+every gated write pauses and asks; reads run free. In an unattended/Auto context there is no Human to confirm in the moment, so by DEFAULT a gated write cannot proceed and unattended tasks stay read-only. OVERRIDE: the Human Authority may authorize unattended writes for a specific task IN ADVANCE — but only after you give a clear, specific warning (what will be written, where, that nobody confirms in the moment, and that it may be irreversible / on a live system) and the Human explicitly accepts responsibility; record that authorization in the task, and then the run may self-confirm writes within that task's scope. This override does NOT extend to customer-org writes — those still need the customer's approval (customer access is read-only); accepting responsibility for your own environment is not the same as authorizing writes to someone else's. (This is about live-system
 connector writes the connector gates, not your own repo/file work.)
