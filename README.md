@@ -11,6 +11,7 @@ stays private and is never part of this.
 ## What's here
 
 - **`GATES.md`** — the enforceable operating gates (self‑sufficiency, autonomous operation, stay‑on‑rails,
+- **`BEHAVIORAL-REVIEW.md`** — an external reviewer that catches behavioral misbehavior a chat can't see in itself (the behavioral half of the learning loop).
   bounded work, customer read‑only, the lessons loop, and more). Read and follow these in every chat.
 - **`ENGINEERING-METHOD.md`** — the engineering method and order‑of‑authority discipline.
 - **`reference-designs/`** — an opinionated Juniper Mist template library and interop playbook, anchored on

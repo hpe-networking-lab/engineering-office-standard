@@ -29,6 +29,8 @@ Customer environments are **read-only** — never write to a customer org withou
 In the chat's mode selector, choose **Automatically approve** so you're not clicking "Allow" on every tool
 action. (Manual is the default — that's the per-action prompt, separate from the behavioral gates.)
 
+Better still, set the connectors you use (your hpe-networking MCP, junos-mcp, GitHub) to **Always allow** in Customize -> Connectors -> Tool permissions. That pre-approves them across every chat AND every scheduled task, so nothing stalls waiting on per-tool approval prompts — do this up front and you won't fight approvals later.
+
 ## 6. Read the model
 From your clone: `GATES.md` and `ENGINEERING-METHOD.md` at the repo root, and skim `reference-designs/`.
 

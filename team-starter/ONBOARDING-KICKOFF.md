@@ -39,7 +39,7 @@ PHASE 3 — Connectors (guide; never enter their secrets):
    configured with THEIR platform credentials), junos-mcp if they do Junos work, optionally a GitHub
    connector. Offer to scaffold any NON-secret config; they enter the secret values themselves. Point them
    at the connector image's own setup docs to run it.
-7. Tell them to set the chat approval mode to Auto (app setting — their click).
+7. Tell them (app settings — their clicks): set the chat approval mode to Auto, AND set the connectors they use to "Always allow" (Customize -> Connectors -> Tool permissions) so chats and scheduled tasks don't stall on per-tool approval prompts.
 
 PHASE 4 — Shakedown (READ-ONLY tests to prove the setup; report after each; NEVER target a customer):
 8. Smoke test: run a read-only cross-platform health check and list the orgs/sites/devices you can see.
