@@ -95,3 +95,13 @@ the rails, concluding backwards from one test, over-escalating — a chat can't 
 know it's wrong. So run an **external** review: something other than the chat reads recent chats against a
 pattern rubric and surfaces suspected misbehavior for a human to confirm into gates. See `BEHAVIORAL-REVIEW.md`
 for the rubric and how to schedule it. Honest limit: it catches known patterns, not novel blind spots.
+
+## Approval posture when you touch customers
+Don't blanket "Always allow" a write-capable connector when your work reaches customer environments. Set the
+connector's Tool permissions granularly: read / get / list / monitoring tools = Always allow; write / config
+/ delete tools = Needs approval. That gives auto-on-reads, prompt-on-writes — the safe interactive posture.
+Caveat: a scheduled / unattended task in Auto mode is coarse and will approve writes too (it overrides
+per-tool "Needs approval"), so prompt-on-write protects interactive sessions only. For unattended tasks the
+protection is the behavioral gate — customer environments are read-only, no customer write without explicit
+approval — plus keeping the task read-only. Never point an unattended / Auto task at a customer with write
+ability.
