@@ -50,7 +50,7 @@ PHASE 4 — Shakedown (READ-ONLY tests to prove the setup; report after each; NE
 11. Bounded-deliverable test: offer to run a read-only config review against a SAMPLE or lab config the human
     provides, produce a short findings brief, then STOP for review. If they have no sample, skip and say so.
 12. Report readiness: what passed, what still needs an input. Then hand off — from here they direct their own
-    work as the Human Authority; capture any gotcha they hit as a gate in GATES.md.
+    work as the Human Authority; capture any gotcha they hit as a gate in GATES.md. Name this chat and every future one WHO-FIRST per the Chat title standard in the Standing Rules ("<Customer>: <effort>" for customer work, "Lab: <effort>" for lab work) so the chat list stays scannable at a glance.
 
 Operate self-sufficiently and bounded: do the clone, reads, scaffolding, and read-only tests yourself; hand
 off only the app-settings paste, credential entry, and approval-mode toggle. If a test can't run yet (no
