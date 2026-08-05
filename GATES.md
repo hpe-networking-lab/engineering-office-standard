@@ -104,4 +104,4 @@ Caveat: a scheduled / unattended task in Auto mode is coarse and will approve wr
 per-tool "Needs approval"), so prompt-on-write protects interactive sessions only. For unattended tasks the
 protection is the behavioral gate — customer environments are read-only, no customer write without explicit
 approval — plus keeping the task read-only. Never point an unattended / Auto task at a customer with write
-ability.
+ability. **Code-mode / single-tool connectors:** some connectors funnel every operation through ONE catch-all tool (e.g. a code-mode MCP with a single `execute`/`invoke`) and expose NO separate read-vs-write tools, so the split is impossible there. Set the read-only discovery tools (search/get/list/schema) to Always allow, and set the catch-all to **Needs approval** (prompt on every call — the safe pick when customer writes are reachable) or Always allow (no prompt; rely on the read-only behavioral gate). Do NOT Block the catch-all — that disables the connector.
