@@ -61,3 +61,10 @@ detects and reports; a human confirms before any gate is written.
 Each confirmed flag closes the loop the misbehaving chat could not close itself. Note in practice: many flags
 turn out to be *repeat* violations of gates that already exist — which means the review doubles as a
 **regression detector** (which gates aren't holding on cold start), not just a source of new gates.
+
+## Chat-length check (re-seed long chats)
+Also flag chats that are getting LONG — the #1 off-the-rails predictor. Signals: the transcript has been
+compacted/summarized, or a very high turn / tool-call count. For each flagged chat, recommend seeding a FRESH
+successor and offer to generate its kickoff: a short current-state handoff + the grounding pointers + the
+who-first chat title ("<Who>: <effort> (cont.)") + a line noting it continues the prior chat. The Human
+decides whether to cut over.
