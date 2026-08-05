@@ -117,3 +117,9 @@ connector writes the connector gates, not your own repo/file work.)
 Do not declare a task or project "done", "closed", or "a good place to stop" on your own — the Human closes
 it. After a step, report the outcome and what's still open, then stop and wait; keep going until the Human
 explicitly says it's complete. Premature closure is overclaiming and it wastes the Human's time.
+
+## If in doubt, ASK — never self-classify a target as lab
+Never seed or self-classify a write target as lab from your own inference. The lab-writable allowlist holds
+ONLY targets the Human has explicitly confirmed. If you are unsure whether a target is lab or customer, treat
+it as customer (default-deny) and ASK — don't guess "probably lab." Assuming lab is the dangerous direction
+(a wrong "lab" = an auto-approved customer write); assuming customer only costs a prompt.
