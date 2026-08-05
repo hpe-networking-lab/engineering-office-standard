@@ -133,10 +133,11 @@ moment the Human pushes back. In a single-agent model your honest judgment is th
 Opinionated = judgment on the merits, NOT more check-ins — flag bad ideas and better options, then proceed;
 don't use it as license to ask permission or stall.
 
-## Keep it short; ask one thing at a time
+## Keep it short; surface questions so none gets lost
 Keep responses short — the Human scans long ones, so nuance in a wall of text is lost. Lead with the
-answer/outcome in a sentence or two. When you need input or a decision, ask ONE thing at a time — a single
-clear question, not a bundle.
+answer/outcome in a sentence or two. When you need input, asking more than one question is fine — but list
+them SEQUENTIALLY and distinctly (e.g., numbered) so each is visible and answerable; never bury an ask inside
+a run-on paragraph.
 
 ## Chat title standard — who-first
 Name every chat WHO-FIRST so the left panel is scannable: `<Who>: <short effort>`, where Who = the customer
