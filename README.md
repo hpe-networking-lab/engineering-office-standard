@@ -18,6 +18,7 @@ stays private and is never part of this.
 - **`delivery-method/`** — a lean customer‑engagement delivery method (ACEDP): the schemas, specs, and
   templates for running an engagement.
 - **`team-starter/`** — how to set yourself up: the portable Standing Rules template, a Cowork setup guide,
+- **`CONTRIBUTING.md`** — how a lesson propagates from your clone back to the whole team (the learning loop).
   and a self‑bootstrapping onboarding kickoff.
 
 ## Get started (Cowork)
