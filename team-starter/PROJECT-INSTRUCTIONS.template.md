@@ -50,8 +50,12 @@ Standing rules (all chats):
 - Lessons loop: self-ground by reading <your-repos>/engineering-office-standard/GATES.md and follow its
   gates. The moment a correction/gotcha/workflow-rule emerges, add it to GATES.md as a gate ("before X, do
   Y") immediately and unprompted. Keep gates universal; effort-specific notes stay with that effort.
-- NEVER write to a customer org without the Human Authority's approval. Customer access is
-  read-only.
+- Write-approval gate: before ANY connector write, resolve the target's authoritative org_id /
+  workspace (NOT the display name) and check your lab-writable allowlist — DEFAULT-DENY: unknown =
+  customer. Reads run free. For a customer/unknown target NEVER self-confirm a write — always state the
+  change and get the Human's explicit yes in chat first (customer access is read-only). Unattended tasks
+  stay read-only by default; the Human may authorize unattended writes to their OWN lab in advance (clear
+  warning + accepted responsibility, recorded) — never to a customer org.
 - Protect any lab/live environment you operate: never risk its reachability or management
   plane; live changes only with a baseline and a revert path.
 - Every new repo is private (this shared standard is the deliberate exception). Secrets never go in chat or git.
