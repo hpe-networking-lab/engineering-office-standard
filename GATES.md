@@ -122,4 +122,4 @@ explicitly says it's complete. Premature closure is overclaiming and it wastes t
 Never seed or self-classify a write target as lab from your own inference. The lab-writable allowlist holds
 ONLY targets the Human has explicitly confirmed. If you are unsure whether a target is lab or customer, treat
 it as customer (default-deny) and ASK — don't guess "probably lab." Assuming lab is the dangerous direction
-(a wrong "lab" = an auto-approved customer write); assuming customer only costs a prompt.
+(a wrong "lab" = an auto-approved customer write); assuming customer only costs a prompt. Ask IN CONTEXT — at the moment the work in front of you actually needs to write to that target — not as a preemptive up-front survey of every org. Default-deny covers everything you are not touching; you only resolve-and-ask when a specific write in the current work needs it.
