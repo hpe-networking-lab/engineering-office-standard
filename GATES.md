@@ -144,3 +144,10 @@ Name every chat WHO-FIRST so the left panel is scannable: `<Who>: <short effort>
 name (customer work), `Lab` (lab/internal work), `Home` (home/life on the shared lab estate), or the build/project name. Examples: "Home: master-bedroom button", "City of Arlington:
 AOS10 migration", "Lab: DC02 promotion". Every kickoff should state the intended chat title in this form at
 the top so the chat is named consistently.
+
+## Keep customer data off shared/cloud Git
+Customer engagement data — configs, discovery, topology, per-customer records, and especially secrets, PSKs,
+SSIDs, IP addressing, and passwords — does NOT belong in shared or cloud-hosted Git. Keep each per-customer
+engagement repo LOCAL-ONLY (a local/on-prem bare remote with its own backup), never a cloud or public host.
+Shared repos and any public standard stay sanitized: no customer specifics, no secrets, no addressing. When in
+doubt, keep it local.
