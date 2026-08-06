@@ -31,8 +31,8 @@ clones a repo that already contains it. The lesson is now the team's default, no
 ## 6. Promote the behavioral ones to always-loaded
 Only project **Custom Instructions** (the Standing Rules) load into *every* chat automatically without
 grounding. So a **universal behavioral** gate (how a chat should operate) should also be lifted into the
-Standing Rules template (`team-starter/PROJECT-INSTRUCTIONS.template.md`) — after which each engineer
-re-pastes the refreshed block. Keep that always-loaded set TIGHT: only genuinely universal behavioral gates;
+plugin's grounding (`grounding/PROJECT-INSTRUCTIONS.md` in engineering-office-plugin) — after which each engineer
+reinstalls / re-grounds. Keep that always-loaded set TIGHT: only genuinely universal behavioral gates;
 everything else stays in `GATES.md` and loads via grounding.
 
 ---

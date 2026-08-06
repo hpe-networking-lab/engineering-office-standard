@@ -18,20 +18,24 @@ stays private and is never part of this.
   Juniper's public best‑practice guides.
 - **`delivery-method/`** — a lean customer‑engagement delivery method (ACEDP): the schemas, specs, and
   templates for running an engagement.
-- **`team-starter/`** — how to set yourself up: the portable Standing Rules template, a Cowork setup guide,
+- **`team-starter/` is retired** — onboarding moved to the installable plugin (see **Get started**).
 - **`CONTRIBUTING.md`** — how a lesson propagates from your clone back to the whole team (the learning loop).
-  and a self‑bootstrapping onboarding kickoff.
 
 ## Get started (Cowork)
 
-1. Clone this repo locally and point your Cowork project at the folder.
-2. Open `team-starter/ONBOARDING-KICKOFF.md` and paste its block into a fresh Cowork chat — the assistant
-   clones this repo, grounds itself, fills in your Standing Rules, and runs a read‑only shakedown.
-3. Do the three things the assistant can't: paste the Standing Rules into your project's Custom Instructions,
-   connect your own tools/credentials, and set the chat approval mode to Auto.
+Onboarding is now an installable plugin — no manual clone or paste. In a fresh Cowork chat:
+
+```
+/plugin marketplace add https://github.com/hpe-networking-lab/engineering-office-plugin.git
+/plugin install engineering-office-plugin@engineering-office-marketplace
+```
+
+Then tell Claude: *"Set me up per SETUP.md and run the onboarding shakedown."* The plugin grounds itself,
+stands up your own connectors (your credentials, never shared), and runs a read-only shakedown. Then do the
+one thing it can't: set the chat approval mode to Auto.
 
 You bring your own environment (your connectors, credentials, workspaces, and lab if you have one). This repo
-brings the standard.
+holds the reference material; the **plugin** makes it Claude's default behavior.
 
 ## License
 
