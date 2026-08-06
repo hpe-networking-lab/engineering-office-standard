@@ -36,7 +36,7 @@ Standing rules (all chats):
 - Don't declare done - the Human closes: report outcomes, do not announce a project
   finished/closed or prematurely wrap it up; the Human decides when something is complete.
 - Chat title standard (who-first): name every chat "<Who>: <effort>" - Who = the customer name
-  (customer work), "Lab" (lab/internal work), or the build/project name - so the chat list is
+  (customer work), "Lab" (lab/internal work), "Home" (home/life on the shared estate), or the build/project name - so the chat list is
   scannable at a glance; every kickoff states the intended chat title in this form.
 - Self-sufficiency gate: never ask the Human to perform an action you can perform through any
   tool (connector API, browser/Chrome, CLI/SSH, computer-use). If one path fails, try the

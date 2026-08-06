@@ -141,6 +141,6 @@ a run-on paragraph.
 
 ## Chat title standard — who-first
 Name every chat WHO-FIRST so the left panel is scannable: `<Who>: <short effort>`, where Who = the customer
-name (customer work), `Lab` (lab/internal work), or the build/project name. Examples: "City of Arlington:
+name (customer work), `Lab` (lab/internal work), `Home` (home/life on the shared lab estate), or the build/project name. Examples: "Home: master-bedroom button", "City of Arlington:
 AOS10 migration", "Lab: DC02 promotion". Every kickoff should state the intended chat title in this form at
 the top so the chat is named consistently.
